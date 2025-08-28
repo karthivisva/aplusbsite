@@ -16,6 +16,7 @@ export default function MobileNav() {
 				<Link href={"/"}>
 					<Image
 						src={logo}
+					
 						alt="ochi logo"
 						width={70}
 						height={70}
@@ -39,13 +40,13 @@ export default function MobileNav() {
 								<Image
 									src={mobileLogo}
 									alt="ochi logo"
-									width={70}
-									height={70}
+									width={150}
+									height={80}
 								/>
 							</Link>
 							<IoMdClose
 								onClick={() => setToggle(false)}
-								className="text-3xl cursor-pointer text-background"
+								className="text-4xl cursor-pointer text-background"
 							/>
 						</div>
 						<ul className="h-full w-full flex justify-center text-left flex-col gap-[10px] padding-x">
@@ -54,7 +55,7 @@ export default function MobileNav() {
 									href={item.href}
 									key={item.id}
 									onClick={(toggle) => setToggle(!toggle)}
-									className="text-[80px] leading-[67px] font-FoundersGrotesk uppercase font-bold tracking-[-.9] text-background">
+									className="text-[65px] leading-[90px] font-FoundersGrotesk uppercase font-bold tracking-[-.9] text-background">
 									{item.title}
 								</Link>
 							))}

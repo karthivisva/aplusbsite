@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { text, curve, translate } from "@/motion";
 
 const routes = {
-	"/": "Home",
-	"/services": "Services",
-	"/presentation": "Our Work",
-	"/ochi-team": "About Us",
+	"/": "HOME",
+	"/services": "SERVICES",
+	"/presentation": "OUR WORKS",
+	"/ochi-team": "ABOUT US",
 	"/insights": "Insights",
 	"/contact": "Contact Us",
 	"/case": "Workiz Easy",

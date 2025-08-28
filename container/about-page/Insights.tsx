@@ -16,7 +16,7 @@ export default function Insights() {
 						<div className="w-full flex sm:flex-col xm:flex-col sm:gap-[20px] xm:gap-[20px] padding-x">
 							<div className="w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col">
 								<h3 className="text-[20px] leading-[30px] font-medium text-secondry font-NeueMontreal">
-									Latest publication:
+									Latest Works
 								</h3>
 							</div>
 							<div className="w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col">

@@ -1202,20 +1202,20 @@ export const aboutPartberItems = [
    {
       id: 1,
       src: planetly,
-      title: "Planetly",
-      para: "Ihor and his team tackled the projects with great professionalism and creativity. They understood our brand value and turned this into excellent slide designs. The process was seamless and very effective, so we decided to roll this out across all our presentation decks. Furthermore, their understanding, professionalism, and creativity have secured a continued partnership."
+      title: "Indian Air Force",
+      para: "We had the honor of working with the Indian Air Force, designing interiors for their café and library at Coimbatore. The spaces were crafted with a modern, minimalistic approach, using high-quality materials like veneer, laminate, wallpaper, fluted panels, glass, and POP. Our goal was to create environments that balance functionality with comfort, offering Air Force personnel a place to relax, connect, and focus."
    },
    {
       id: 2,
       src: officevibe,
-      title: "Officevibe",
-      para: "Ochi has an impressive understanding of what's needed to do an effective presentation. The stakeholders at work said it's the best most complete PP template they've ever seen. Ochi delivered more than I was expecting and we were really surprised with the quality of his work. Will work with Ochi design again for sure!"
+      title: "Kauvery Hospital",
+      para: "We collaborated with Kauvery Hospital, Trichy, to design and execute a complete modern interior transformation across 3,800 sq.ft. The project focused on creating a healing, welcoming environment for patients and visitors, using premium materials like veneer, acrylic, laminate, tile, and marble flooring, complemented by gypsum and grid ceilings. The result is a space that reflects both functionality and warmth, aligned with the hospital’s commitment to quality healthcare."
    },
    {
       id: 3,
       src: nestle,
-      title: "Nestle",
-      para: "This is just a great experience for us! As an established company, you operate within different industries and expect immediate input with a certain level of service. Ihor and the team delivered exactly that. Fantastic result, quick delivery time, and highly responsive. This team is a hidden gem. We've already started to outline our next projects for them."
+      title: "Globus Arima",
+      para: "We partnered with Globus Arima, Coimbatore, to deliver a 9,000 sq.ft. modern office interior. The design emphasized openness, collaboration, and a sleek corporate aesthetic. By incorporating premium finishes like veneer, laminates, and glass, we created a workspace that is both functional and inspiring, supporting productivity while reflecting the brand’s modern identity."
    },
    // {
    //    id: 4,

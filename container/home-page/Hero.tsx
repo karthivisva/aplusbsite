@@ -17,7 +17,7 @@ export default function Hero() {
 					<div className="w-full flex justify-between gap-[20px] pl-[50px] md:pl-[30px] sm:pl-[20px] xm:pl-[20px]">
 						<div>
 							<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase">
-								we create <br />
+								Designing <br />
 								<div className="flex items-center gap-[5px]">
 									<motion.span
 										initial={{ width: 0 }}
@@ -37,10 +37,10 @@ export default function Hero() {
 										/>
 									</motion.span>
 									<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase">
-										eye-opening
+							DREAMS
 									</h1>
 								</div>
-								presentation
+									Building Realities
 							</h1>
 						</div>
 						<div>
@@ -53,8 +53,8 @@ export default function Hero() {
 							/>
 						</div>
 					</div>
-					<div className="w-full flex flex-col h-[22vh] border-t border-[#21212155] py-[20px] sm:mb-[80px] xm:mb-[80px] gap-[30px]">
-						<div className="flex justify-between items-center padding-x gap-[20px] sm:flex-col sm:items-start xm:flex-col xm:items-start">
+					<div className="w-full flex flex-col h-[60vh] border-t border-[#21212155] py-[90px] sm:mb-[80px] xm:mb-[80px] gap-[30px]">
+						<div className="flex justify-between items-center padding-x gap-[2px] sm:flex-col sm:items-start xm:flex-col xm:items-start">
 							<div className="w-[50%] xm:w-full sm:w-full">
 								<p className="paragraph font-NeueMontreal text-secondry">
 									For public and private companies

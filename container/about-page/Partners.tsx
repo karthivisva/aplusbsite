@@ -7,10 +7,10 @@ export default function Principles() {
 		<section className="w-full bg-background">
 			<div>
 				<h1 className="sub-heading padding-x font-medium font-NeueMontreal text-secondry">
-					We’ve built long-lasting partnerships
-					<br className="sm:hidden xm:hidden" /> with the most ambitious brands
+			We’ve partnered with visionary clients — 
+					<br className="sm:hidden xm:hidden" />from the Indian Air Force and leading hospitals to ambitious homeowners and businesses
 					<br className="sm:hidden xm:hidden" />
-					across the globe:
+				 — delivering spaces that inspire and last
 				</h1>
 			</div>
 			<div className="w-full border-t border-[#21212155] mt-[50px]">

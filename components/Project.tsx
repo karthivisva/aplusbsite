@@ -78,7 +78,7 @@ export default function Project({ item }: { item: any }) {
 							className="py-[10px]"
 							backgroundColor="#212121">
 							<p className="text-secondry z-10 px-[15px] ml-[30px] py-[10px] group-hover:text-white">
-								view all case studies
+								View All Projects
 							</p>
 							<div className="bg-secondry p-[15px] rounded-full scale-[0.3] mr-[17px] group-hover:scale-[1] transition-all z-10 text-secondry group-hover:bg-white  duration-300 ease-in-out">
 								<ArrowUpRight

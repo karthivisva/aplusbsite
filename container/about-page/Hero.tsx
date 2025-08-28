@@ -14,7 +14,7 @@ export default function Hero() {
 					<div className="w-full margin padding-x">
 						<div>
 							<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase">
-								WE ARE <br />
+								A plus b <br />
 								<div className="flex items-center gap-[5px]">
 									<motion.span
 										initial={{ width: 0 }}
@@ -33,7 +33,7 @@ export default function Hero() {
 										/>
 									</motion.span>
 									<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase">
-										OCHI DESIGN
+										Consortium
 									</h1>
 								</div>
 							</h1>
@@ -50,36 +50,24 @@ export default function Hero() {
 								<div className="w-[50%] flex flex-col gap-y-[40px] sm:w-full xm:w-full">
 									<div className="flex flex-col gap-y-[20px]">
 										<p className="paragraph font-NeueMontreal text-secondry">
-											In Ukrainian, ochi - means eyes. It&apos;s not
-											<br /> just a beautiful word, but our philosophy.
+										With nearly a decade of experience, Aplus B Consortium is a multi-disciplinary firm specializing in architecture, interior design, and construction.
+											<br />We provide comprehensive one-roof solutions tailored to each client’s unique needs — from conceptual design and renovation to full-scale construction.
 											<br />
-											Almost everything that needs to be
-											<br /> communicated is better shown than <br />
-											explained.
+		
+											<br />At Aplus B, we believe every space has a story to tell. Our mission is to transform visions into functional, beautiful, and sustainable realities, combining creativity with cutting-edge technologies like 3D modeling, AR/VR, and modern construction innovations. <br />
+										
 										</p>
 									</div>
 									<div className="flex flex-col gap-y-[20px]">
 										<p className="paragraph font-NeueMontreal text-secondry">
-											We believe a great presentation evokes
+										Our team of registered architects, civil engineers, and designers work collaboratively, ensuring precision, quality, and on-time delivery for every project.
 											<br />
-											interest and drives business results far
-											<br /> better than any saying can. Hence, we
-											<br />
-											founded ochi to help you persuade
-											<br /> colleagues and clients by creating eye-
-											<br />
-											opening presentations.
+										With a strong focus on sustainability, innovation, and client satisfaction, we’ve built lasting partnerships across residential, commercial, institutional, and industrial sectors.
 										</p>
 									</div>
 								</div>
 								<div className="flex w-fit h-fit gap-[5px] group">
-									<div className="rounded-[50px] border border-[#21212199] group-hover:bg-secondry  py-[3px] px-[12px] cursor-pointer">
-										<Link
-											href="/case"
-											className="paragraph font-NeueMontreal text-secondry uppercase group-hover:text-background transition-all duration-200 ease-in">
-											Our Work
-										</Link>
-									</div>
+								
 									<div className="w-[35px] flex items-center justify-center h-[35px] border border-[#21212199] rounded-[50px] p-[12px]  group-hover:bg-secondry transition-all duration-200 ease-in cursor-pointer sm:hidden xm:hidden">
 										<p className="paragraph font-normal text-secondry group-hover:text-background">
 											<ArrowUpRight strokeWidth={1.25} />
@@ -95,12 +83,12 @@ export default function Hero() {
 				className="padding-y"
 				data-scroll
 				data-scroll-speed="-.1">
-				<Eyes className="w-[300px] h-[300px] md:w-[200px] md:h-[200px] sm:w-[150px] sm:h-[150px] xm:w-[150px] xm:h-[150px] sm:flex-col xm:flex-col" />
+				
 			</div>
 			<div className="padding-x">
 				<h1 className="sub-heading font-medium font-NeueMontreal text-secondry">
-					We save businesses from ugly and
-					<br className="sm:hidden xm:hidden" /> ineffective presentations.
+					We turn empty plots into inspiring spaces
+					<br className="sm:hidden xm:hidden" />  that tell your story.
 				</h1>
 			</div>
 		</section>
