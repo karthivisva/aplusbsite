@@ -63,7 +63,7 @@ export default function Hero() {
 							<div className="w-[50%] xm:w-full sm:w-full flex justify-between xm:flex-col xm:items-start sm:flex-col sm:items-start gap-[20px]">
 								<div>
 									<p className="paragraph font-NeueMontreal text-secondry">
-										From the first picth to IPO
+										From the first 
 									</p>
 								</div>
 								<div className="flex items-center gap-[5px] group">

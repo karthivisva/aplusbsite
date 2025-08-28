@@ -38,18 +38,13 @@ export const footerItems = [
       href: "https://www.instagram.com/",
    },
    {
-      id: 2,
-      title: "Behance",
-      href: "https://www.behance.com/",
-   },
-   {
       id: 3,
       title: "Facebook",
       href: "https://www.facebook.com/",
    },
    {
       id: 4,
-      title: "Linkedin",
+      title: "Youtube",
       href: "https://www.linkedin.com/",
    },
 ];
@@ -338,59 +333,50 @@ export const clientsItem = [
 export const projectItem = [
    {
       id: 1,
-      title: "fyde",
+      title: "Annamalai Residence",
       href: "/case/",
       src: project1,
       links: [
          {
             id: 1,
-            title: "audit",
+            title: "Construction",
             href: "/services",
          },
          {
             id: 2,
-            title: "copywriting",
+            title: "Architecture",
             href: "/services",
          },
-         {
-            id: 3,
-            title: "sales deck",
-            href: "/services",
-         },
-         {
-            id: 4,
-            title: "slides design",
-            href: "/services",
-         },
+       
       ]
    },
    {
       id: 2,
-      title: "vise",
+      title: "Arunkumar Residence,Coimbatore",
       href: "/case/",
       src: project2,
       links: [
          {
             id: 1,
-            title: "agency",
+            title: "Construction",
             href: "/services",
          },
          {
             id: 2,
-            title: "compony presentation",
+            title: "Architecture",
             href: "/services",
          },
       ]
    },
    {
       id: 3,
-      title: "trawa",
+      title: "Balaji Residence ",
       href: "/case/",
       src: project3,
       links: [
          {
             id: 1,
-            title: "brand identity",
+            title: "Interrior",
             href: "/services",
          },
          {
@@ -398,22 +384,23 @@ export const projectItem = [
             title: "design research",
             href: "/services",
          },
-         {
-            id: 3,
-            title: "investor deck",
-            href: "/services",
-         },
+      
       ]
    },
    {
       id: 4,
-      title: "premiumblend",
+      title: "Campus",
       href: "/case/",
       src: project4,
       links: [
-         {
+           {
             id: 1,
-            title: "brand template",
+            title: "Interrior",
+            href: "/services",
+         },
+         {
+            id: 2,
+            title: "design research",
             href: "/services",
          },
       ]
@@ -869,41 +856,32 @@ export const achiveItems = [
 export const presentationProjectItem = [
    {
       id: 1,
-      title: "fyde",
+      title: "Annamalai residence",
       src: project1,
       href: "/case/",
       links: [
          {
             id: 1,
-            title: "audit",
+            title: "Artchitecture",
             href: "/services",
          },
          {
             id: 2,
-            title: "copywriting",
+            title: "Construction",
             href: "services",
          },
-         {
-            id: 3,
-            title: "sales deck",
-            href: "services",
-         },
-         {
-            id: 4,
-            title: "slides design",
-            href: "services",
-         },
+       
       ]
    },
    {
       id: 2,
-      title: "trawa",
+      title: "Balaji residence",
       src: project3,
       href: "/case/",
       links: [
          {
             id: 1,
-            title: "brand identity",
+            title: "Interior",
             href: "/services",
          },
          {
@@ -911,155 +889,136 @@ export const presentationProjectItem = [
             title: "design research",
             href: "services",
          },
-         {
-            id: 3,
-            title: "investor deck",
-            href: "services",
-         },
+      
       ]
    },
    {
       id: 3,
-      title: "premium blend",
+      title: "Campus",
       src: project4,
       href: "/case/",
       links: [
          {
             id: 1,
-            title: "brand template",
+            title: "Interior",
             href: "/services",
          },
       ]
    },
    {
       id: 4,
-      title: "planetly",
+      title: "Commercial building",
       src: project5,
       href: "/case/",
       links: [
          {
             id: 1,
-            title: "brand template",
+            title: "Elivation",
             href: "/services",
          },
          {
             id: 2,
-            title: "big news deck",
+            title: "Construction",
             href: "/services",
          },
          {
             id: 3,
-            title: "branded template",
-            href: "/services",
-         },
-         {
-            id: 4,
-            title: "investor deck",
-            href: "/services",
-         },
-         {
-            id: 5,
-            title: "policy deck & playbook",
-            href: "/services",
-         },
-         {
-            id: 6,
-            title: "sales deck",
+            title: "Artichitecture",
             href: "/services",
          },
       ]
    },
    {
       id: 5,
-      title: "black box",
+      title: "Meenakshi residence",
       src: project8,
       href: "/case/",
       links: [
          {
             id: 1,
-            title: "investor deck",
+            title: "Artictecture",
             href: "/services",
          },
          {
             id: 2,
-            title: "redesign",
+            title: "Construction",
             href: "/services",
          },
          {
             id: 3,
-            title: "review",
+            title: "Elivation",
             href: "/services",
          },
       ]
    },
    {
       id: 6,
-      title: "vise",
+      title: "Arun Kumar residence",
       src: project2,
       href: "/case/",
       links: [
          {
             id: 1,
-            title: "agency",
+            title: "Artchitecture",
             href: "/services",
          },
          {
             id: 2,
-            title: "compony presentation",
+            title: "Construction",
             href: "services",
          },
       ]
    },
    {
       id: 7,
-      title: "soft start",
+      title: "MPAC",
       src: project9,
       href: "/case/",
       links: [
          {
             id: 1,
-            title: "brand template",
+            title: "Elivation",
             href: "/services",
          },
          {
             id: 2,
-            title: "sales desc",
+            title: "Architecture",
             href: "/services",
          },
       ]
    },
    {
       id: 8,
-      title: "officevibe",
+      title: "Kauvery hospital",
       src: project7,
       href: "/case/",
       links: [
          {
             id: 1,
-            title: "brand template",
+            title: "Interior",
             href: "/services",
          },
       ]
    },
    {
       id: 9,
-      title: "workiz easy",
+      title: "Kamesh Residence",
       src: project6,
       href: "/case/",
       links: [
          {
             id: 1,
-            title: "onboarding presentation",
+            title: "Elivation",
             href: "/services",
          },
          {
             id: 2,
-            title: "policy deck & playbook",
+            title: "Artichitecture",
             href: "/services",
          },
          {
             id: 3,
-            title: "sales deck",
+            title: "Construction",
             href: "/services",
          },
       ]
@@ -1070,17 +1029,17 @@ export const presentationProjectItem = [
 export const publicationItems = [
    {
       id: 1,
-      title: "officevibe ppt template",
+      title: "Pollachi Plots",
       src: publication1
    },
    {
       id: 2,
-      title: "trawa energy pitch deck",
+      title: "Senthil Residence",
       src: publication2
    },
    {
       id: 3,
-      title: "tech for ukraine",
+      title: "Siva Residence-Ambur",
       src: publication3
    },
 ];

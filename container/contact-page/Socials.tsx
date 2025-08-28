@@ -81,7 +81,7 @@ export default function Socials() {
 									<Link
 										href="mailto:hello@ochi.design"
 										className="paragraph font-NeueMontreal text-secondry uppercase group-hover:text-background transition-all duration-200 ease-in">
-										hello@ochi.design
+										aplusbconsortium@gmail.com
 									</Link>
 								</div>
 								<div className="w-[33px] flex items-center justify-center h-[33px] border-[2px] border-[#21212155] rounded-[50px] group-hover:bg-secondry transition-all duration-200 ease-in cursor-pointer sm:hidden xm:hidden">
