@@ -13,7 +13,7 @@ export default function Expectations() {
 	};
 
 	return (
-		<section className="w-full bg-marquee padding-y rounded-t-[20px]">
+		<section className="w-full bg-marquee  padding-y rounded-t-[20px]">
 			<div className="w-full bg-marquee z-10 relative rounded-t-[20px]">
 				<Marquee
 					title="why us other"

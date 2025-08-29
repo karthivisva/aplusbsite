@@ -10,24 +10,28 @@ export default function About() {
 	const [hovered, setHovered] = useState(false);
 
 	return (
-		<section className="w-full bg-about padding-y rounded-t-[20px] z-20 relative mt-[-15px]">
+		<section className="w-full padding-y rounded-t-[20px] z-20 relative mt-[-15px]" style={{ backgroundColor: "#4d8045" }}>
+
+			{/* Intro Text */}
 			<div className="pl-[50px] sm:px-[20px] xm:px-[20px]">
 				<h2 className="sub-heading font-medium font-NeueMontreal text-secondry">
-					Ochi is a strategic partner for fast-grow­ing tech
-					<br className="sm:hidden xm:hidden" /> businesses that need to&nbsp;
+					Aplus B Consortium is your trusted partner in&nbsp;
 					<span className="sub-heading font-medium font-NeueMontreal link-flash cursor-pointer">
-						raise funds,
+						architecture,
 					</span>
-					&nbsp;sell prod­ucts, <br className="sm:hidden xm:hidden" />
+					&nbsp;interior design, and&nbsp;
 					<span className="sub-heading font-medium font-NeueMontreal link-flash cursor-pointer">
-						ex­plain com­plex ideas,
+						construction.
 					</span>
-					&nbsp;and&nbsp;
+					<br className="sm:hidden xm:hidden" />
+					We bring creativity, technology, and precision together to build
 					<span className="sub-heading font-medium font-NeueMontreal link-flash cursor-pointer">
-						hire great peo­ple.
+						&nbsp;spaces that inspire.
 					</span>
 				</h2>
 			</div>
+
+			{/* What you can expect */}
 			<div className="w-full border-y border-[#21212155] my-[50px] py-[20px]">
 				<div className="padding-x pb-[50px] w-full flex sm:flex-col xm:flex-col gap-[30px] justify-between">
 					<div className="w-[50%] sm:w-full xm:w-full">
@@ -39,19 +43,20 @@ export default function About() {
 						<div className="w-full flex gap-[30px] h-full items-end sm:items-start sm:flex-col xm:items-start xm:flex-col">
 							<div className="w-[40%] sm:w-[60%] xm:w-[60%]">
 								<p className="sub-paragraph font-medium font-NeueMontreal text-secondry tracking-wide">
-									We create tailored presentations to help you persuade your
-									colleagues, clients, or investors. Whether it’s live or
-									digital, delivered for one or a hundred people.
+									We design with purpose — creating spaces that are functional,
+									sustainable, and tailored to the people who use them. Every
+									detail is intentional, ensuring comfort, efficiency, and a
+									lasting impact.
 								</p>
 								<p className="sub-paragraph font-medium font-NeueMontreal text-secondry pt-[30px] tracking-wide">
-									We believe the mix of strategy and design (with a bit of
-									coffee) is what makes your message clear, convincing, and
-									captivating.
+									We deliver with integrity — combining quality craftsmanship,
+									innovation, and on-time execution to build trust and long-term
+									partnerships with our clients.
 								</p>
 							</div>
 							<div className="w-[60%] flex justify-end flex-col  sm:w-full xm:w-full">
 								<h1 className="sub-paragraph font-medium font-NeueMontreal text-secondry pb-[20px]">
-									S:
+									Connect With Us:
 								</h1>
 								<div className="flex flex-col">
 									{footerItems.map((item) => (
@@ -68,35 +73,61 @@ export default function About() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full flex justify-between padding-x sm:flex-col xm:flex-col gap-[30px]">
-				<div className="flex flex-col gap-[30px]">
-					<Heading title="Our approach:" />
-					<div
-						className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group"
-						onMouseEnter={() => setHovered(true)}
-						onMouseLeave={() => setHovered(false)}>
-						<RoundButton
-							href="/ochi-team"
-							title="read more"
-							bgcolor="#000"
-							className="bg-white text-black"
-							style={{ color: "#fff" }}
-						/>
-					</div>
-				</div>
-				<div
-					className={`w-[50%] sm:w-full xm:w-full transition transform duration-[1.5s] ease-[.215,.61,.355,1] rounded-[15px] overflow-hidden ${
-						hovered && "scale-[0.96]"
-					}`}>
-					<Image
-						src={aboutImg}
-						alt="about-img"
-						className={`w-full h-full transition transform duration-[2s] ease-[.215,.61,.355,1] ${
-							hovered && "scale-[1.09]"
-						}`}
-					/>
-				</div>
-			</div>
+
+			{/* Our approach */}
+			{/* Our approach */}
+<div className="w-full flex justify-between padding-x sm:flex-col xm:flex-col gap-[30px]">
+  {/* Left side */}
+  <div className="flex flex-col gap-[30px]">
+    <Heading title="Our approach:" />
+
+    {/* Text content */}
+    <div className="space-y-4 max-w-[500px]">
+      <p className="sub-paragraph font-medium font-NeueMontreal text-secondry tracking-wide">
+        At <span className="font-semibold text-[#ffffff]">A Plus B Consortium</span>, 
+        we approach every project with a balance of creativity, strategy, and precision.  
+        Our goal is not just to build structures, but to create environments that 
+        inspire and endure.
+      </p>
+      <ul className="list-none space-y-2 text-secondry sub-paragraph font-medium font-NeueMontreal tracking-wide">
+        <li><span className="font-semibold text-[#f8f8f8]">1. Discover –</span> We dive deep into understanding your vision, goals, and context.</li>
+        <li><span className="font-semibold text-[#eaeaea]">2. Design –</span> We transform ideas into bold, functional, and sustainable spaces.</li>
+        <li><span className="font-semibold text-[#ffffff]">3. Deliver –</span> We execute with integrity, precision, and on-time commitment.</li>
+      </ul>
+    </div>
+
+    {/* Button */}
+    <div
+      className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <RoundButton
+        href="/aplusb-team"
+        title="read more"
+        bgcolor="#000"
+        className="bg-white text-black"
+        style={{ color: "#fff" }}
+      />
+    </div>
+  </div>
+
+  {/* Right side image */}
+  <div
+    className={`w-[50%] sm:w-full xm:w-full transition transform duration-[1.5s] ease-[.215,.61,.355,1] rounded-[15px] overflow-hidden ${
+      hovered && "scale-[0.96]"
+    }`}
+  >
+    <Image
+      src={aboutImg}
+      alt="about-img"
+      className={`w-full h-full transition transform duration-[2s] ease-[.215,.61,.355,1] ${
+        hovered && "scale-[1.09]"
+      }`}
+    />
+  </div>
+</div>
+
 		</section>
 	);
 }

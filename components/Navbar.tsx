@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
-import { logo } from "@/public";
 import { useState } from "react";
 import { navVariants } from "@/motion";
 import { TextHover } from "@/animation";
@@ -30,15 +28,13 @@ export default function Navbar() {
       >
         {/* Logo Section */}
         <div className="w-[50%]">
-          <Link href={"/"}>
-            <Image
-              src={logo}
-              alt="ochi logo"
-              width={120}   // bigger logo
-              height={120}  // bigger logo
-              className="object-contain"
-              priority
-            />
+          <Link href={"/"} className="flex items-baseline gap-1">
+            <span className="text-[28px] font-bold tracking-wide bg-gradient-to-r from-[#4d8045] to-[#b3d297] bg-clip-text text-transparent">
+              a plus b
+            </span>
+            <span className="text-[14px] font-medium text-black">
+              Consortium
+            </span>
           </Link>
         </div>
 
