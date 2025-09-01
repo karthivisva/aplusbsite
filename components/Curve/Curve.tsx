@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -14,14 +15,12 @@ const routes: Record<string, string> = {
   "/case": "Workiz Easy",
 };
 
-const anim = (variants: any) => {
-  return {
-    variants,
-    initial: "initial",
-    animate: "enter",
-    exit: "exit",
-  };
-};
+const anim = (variants: any) => ({
+  variants,
+  initial: "initial",
+  animate: "enter",
+  exit: "exit",
+});
 
 export default function Curve({
   children,
@@ -31,12 +30,9 @@ export default function Curve({
   backgroundColor: string;
 }) {
   const router = useRouter();
-  const [dimensions, setDimensions] = useState<{
-    width: number | null;
-    height: number | null;
-  }>({
-    width: null,
-    height: null,
+  const [dimensions, setDimensions] = useState<{ width: number; height: number }>({
+    width: 0,
+    height: 0,
   });
 
   useEffect(() => {
@@ -46,18 +42,17 @@ export default function Curve({
         height: window.innerHeight,
       });
     }
+
     resize();
     window.addEventListener("resize", resize);
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
+    return () => window.removeEventListener("resize", resize);
   }, []);
 
   return (
     <div style={{ backgroundColor }} className="overflow-x-hidden">
       {/* Black overlay while measuring dimensions */}
       <div
-        style={{ opacity: dimensions.width == null ? 1 : 0 }}
+        style={{ opacity: dimensions.width === 0 ? 1 : 0 }}
         className="fixed w-screen h-screen pointer-events-none left-0 top-0 z-50 bg-black"
       />
 
@@ -70,13 +65,16 @@ export default function Curve({
       </motion.p>
 
       {/* Animated curve SVG */}
-      {dimensions.width != null && <SVG {...dimensions} />}
+      {dimensions.width > 0 && dimensions.height > 0 && (
+        <SVG width={dimensions.width} height={dimensions.height} />
+      )}
+
       {children}
     </div>
   );
 }
 
-const SVG = ({ height, width }: { height: number; width: number }) => {
+const SVG = ({ width, height }: { width: number; height: number }) => {
   const initialPath = `
     M0 300 
     Q${width / 2} 0 ${width} 300
