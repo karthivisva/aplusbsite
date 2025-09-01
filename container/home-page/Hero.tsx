@@ -71,7 +71,7 @@ export default function Hero() {
 					</div>
 
 					{/* Bottom Section */}
-					<div className="w-full flex flex-col h-[60vh] border-t border-[#21212155] py-[90px] sm:mb-[80px] xm:mb-[80px] gap-[30px]">
+					<div className="w-full flex flex-col h-[60vh] py-[90px] sm:mb-[80px] xm:mb-[80px] gap-[30px]">
 						
 						{/* Project CTA Row */}
 						<div className="flex justify-between items-center padding-x gap-[2px] sm:flex-col sm:items-start xm:flex-col xm:items-start">

@@ -15,6 +15,7 @@ export default function Home() {
 		<>
 			<Curve backgroundColor={"#f1f1f1"}>
 				<Hero />
+				<Ready />
 				<div
 					className="w-full z-10 relative rounded-t-[20px] padding-y"
 					style={{ backgroundColor: "#b3d297" }}
@@ -28,7 +29,7 @@ export default function Home() {
 				
 				<Projects />
 				<Clients />
-				<Ready />
+				
 			</Curve>
 		</>
 	);

@@ -1,72 +1,99 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Rounded } from "@/components";
-import { brand01, brand02, brand03 } from "@/public";
+import { motion } from "framer-motion";
+
+// Import your images
+import rating1 from "@/public/rate.png";
+import rating2 from "@/public/rate2.png";
+import rating3 from "@/public/rate3.png";
+import rating4 from "@/public/rate4.png";
+import rating5 from "@/public/rate5.png";
+import rating6 from "@/public/rate6.png";
+
+const reviews = [
+  {
+    id: 1,
+    img: rating1,
+    link: "/",
+    label: "Holistic Expertise: Complete solutions from design to execution.",
+  },
+  {
+    id: 2,
+    img: rating2,
+    link: "/services",
+    label:
+      "Technology Driven: Leaders in BIM, 3D printing, and AR/VR applications.",
+  },
+  {
+    id: 3,
+    img: rating3,
+    link: "/services",
+    label:
+      "Sustainable Focus: Eco-friendly designs that respect the environment.",
+  },
+  {
+    id: 4,
+    img: rating4,
+    link: "/services",
+    label:
+      "Client-Centric Approach: Personalized, transparent, and collaborative.",
+  },
+  {
+    id: 5,
+    img: rating5,
+    link: "/services",
+    label:
+      "Multidisciplinary Team: Architects, engineers, designers, and managers working seamlessly.",
+  },
+  {
+    id: 6,
+    img: rating6,
+    link: "/services",
+    label:
+      "Innovation Driven: Constantly adopting emerging technologies to deliver future-ready solutions.",
+  },
+];
 
 export default function Ratings() {
-	return (
-		<div className="w-full flex justify-between sm:flex-col xm:flex-col gap-[20px]">
-			<div className="w-[49.5%] sm:w-full xm:w-full justify-between h-[60vh] sm:h-[50vh] xm:h-[50vh] gap-[10px]">
-				<div className="w-full h-full flex items-center justify-center rounded-[10px] bg-marquee relative">
-					<Image
-						src={brand01}
-						alt="brandImg"
-						width={150}
-						height={150}
-					/>
-					<div className="absolute bottom-[35px] left-[25px] flex items-center justify-center border border-about px-[12px] py-[8px] cursor-pointer rounded-full">
-						<Link
-							className="xl:text-[18px] xl:leading-[18px] text-[14px] leading-[14px] text-about uppercase font-normal font-NeueMontreal tracking-wider"
-							href={"/"}>
-							&copy;2019 - 2024
-						</Link>
-					</div>
-				</div>
-			</div>
-			<div className="w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col flex gap-[15px]">
-				<div className="w-full flex items-center justify-center rounded-[10px] bg-secondry relative h-[60vh] sm:h-[50vh] xm:h-[50vh]">
-					<Image
-						src={brand02}
-						alt="brandImg"
-						width={150}
-						height={150}
-					/>
-					<div className="absolute left-[25px] bottom-[35px] w-fit rounded-[50px] border border-white cursor-pointer">
-						<Link
-							className="xl:text-[18px] xl:leading-[18px] text-[14px] leading-[14px] font-NeueMontreal text-white uppercase tracking-wider"
-							href="/services">
-							<Rounded
-								backgroundColor="#fff"
-								className="">
-								<p className="z-10 px-[12px] py-[8px] hover:text-black">
-									rating 5.0 on clutch
-								</p>
-							</Rounded>
-						</Link>
-					</div>
-				</div>
-				<div className="w-full flex items-center justify-center rounded-[10px] bg-secondry relative h-[60vh] sm:h-[50vh] xm:h-[50vh]">
-					<Image
-						src={brand03}
-						alt="brandImg"
-						width={150}
-						height={150}
-					/>
-					<div className="absolute left-[25px] bottom-[35px] w-fit rounded-[50px] border border-white cursor-pointer">
-						<Link
-							className="xl:text-[18px] xl:leading-[18px] text-[14px] leading-[14px] font-NeueMontreal text-white uppercase tracking-wider"
-							href="/services">
-							<Rounded
-								backgroundColor="#fff"
-								className="">
-								<p className="z-10 px-[12px] py-[8px] hover:text-black">
-									buisness bootcamp alumini
-								</p>
-							</Rounded>
-						</Link>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px]">
+      {reviews.map((item, i) => (
+        <div
+          key={item.id}
+          className="relative w-full h-[35vh] sm:h-[30vh] lg:h-[40vh] rounded-[12px] overflow-hidden"
+        >
+          <Image
+            src={item.img}
+            alt="reviewImg"
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, 
+                   (max-width: 1024px) 50vw, 
+                   33vw"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-[15px]">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: i * 0.2,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+              className="px-[20px] py-[12px] rounded-full border border-white bg-white/10 backdrop-blur-md"
+            >
+              <Link
+                href={item.link}
+                className="text-white text-[13px] sm:text-[14px] lg:text-[15px] leading-[20px] font-NeueMontreal text-center"
+              >
+                {item.label}
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
