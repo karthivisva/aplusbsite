@@ -51,23 +51,21 @@ export default function Curve({
   }, []);
 
   return (
-    <div 
-      style={{ backgroundColor }} 
-      className="relative min-h-screen w-full overflow-hidden"
-    >
-      {/* Black overlay while measuring dimensions - Enhanced */}
+    <>
+      {/* Full screen black overlay while measuring dimensions */}
       <motion.div
-        style={{ 
-          opacity: dimensions.width === 0 ? 1 : 0,
+        className="fixed top-0 left-0 w-screen h-screen bg-black z-[100] pointer-events-none"
+        style={{
           position: 'fixed',
           top: 0,
           left: 0,
           width: '100vw',
           height: '100vh',
+          minWidth: '100vw',
+          minHeight: '100vh',
           backgroundColor: 'black',
-          zIndex: 60
+          zIndex: 100,
         }}
-        className="pointer-events-none"
         initial={{ opacity: 1 }}
         animate={{ opacity: dimensions.width === 0 ? 1 : 0 }}
         transition={{ duration: 0.3 }}
@@ -75,7 +73,17 @@ export default function Curve({
 
       {/* Page title in the middle */}
       <motion.p
-        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl md:text-5xl lg:text-6xl z-[70] text-center whitespace-nowrap px-4"
+        className="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white z-[110] text-center whitespace-nowrap px-4"
+        style={{
+          position: 'fixed',
+          left: '50%',
+          top: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 110,
+          fontSize: 'clamp(24px, 5vw, 64px)',
+          color: 'white',
+          textAlign: 'center',
+        }}
         {...anim(text)}
       >
         {routes[router.route] || "PAGE"}
@@ -86,32 +94,39 @@ export default function Curve({
         <SVG width={dimensions.width} height={dimensions.height} />
       )}
 
-      <div className="relative z-10">
-        {children}
+      {/* Main content container */}
+      <div 
+        style={{ backgroundColor }} 
+        className="relative min-h-screen w-full overflow-hidden"
+      >
+        <div className="relative z-10">
+          {children}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
 const SVG = ({ width, height }: { width: number; height: number }) => {
-  // Create paths that completely fill the screen
-  const initialPath = `M0 0 Q${width / 2} ${height / 2} ${width} 0 L${width} ${height} Q${width / 2} ${height + height / 2} 0 ${height} L0 0 Z`;
-
-  const targetPath = `M0 0 Q${width / 2} 0 ${width} 0 L${width} ${height} Q${width / 2} ${height} 0 ${height} L0 0 Z`;
+  // Create a rectangle that covers the entire screen initially, then animates to reveal content
+  const initialPath = `M0,0 L0,${height} L${width},${height} L${width},0 Z`;
+  const targetPath = `M0,${height} L0,${height} L${width},${height} L${width},${height} Z`;
 
   return (
     <motion.svg
-      className="fixed inset-0 w-screen h-screen pointer-events-none z-50"
-      width="100vw"
-      height="100vh"
-      viewBox={`0 0 ${width} ${height}`}
-      preserveAspectRatio="xMidYMid slice"
+      className="fixed top-0 left-0 w-screen h-screen pointer-events-none z-[90]"
       style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
         width: '100vw',
         height: '100vh',
         minWidth: '100vw',
-        minHeight: '100vh'
+        minHeight: '100vh',
+        zIndex: 90,
       }}
+      viewBox={`0 0 ${width} ${height}`}
+      preserveAspectRatio="none"
       {...anim(translate)}
     >
       <motion.path
