@@ -34,6 +34,7 @@ export default function Curve({
     width: 0,
     height: 0,
   });
+  const [showOverlay, setShowOverlay] = useState(true);
 
   useEffect(() => {
     function resize() {
@@ -45,15 +46,27 @@ export default function Curve({
 
     resize();
     window.addEventListener("resize", resize);
-    return () => window.removeEventListener("resize", resize);
+
+    // Hide overlay after initial measurement
+    const timer = setTimeout(() => setShowOverlay(false), 500);
+
+    return () => {
+      window.removeEventListener("resize", resize);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
-    <div style={{ backgroundColor }} className="overflow-x-hidden">
-      {/* Black overlay while measuring dimensions */}
-      <div
-        style={{ opacity: dimensions.width === 0 ? 1 : 0 }}
-        className="fixed w-screen h-screen pointer-events-none left-0 top-0 z-50 bg-black"
+    <div
+      style={{ backgroundColor }}
+      className="overflow-x-hidden relative w-full min-h-screen"
+    >
+      {/* Fullscreen black overlay */}
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: showOverlay ? 1 : 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="fixed top-0 left-0 w-full h-full z-[9999] pointer-events-none bg-black"
       />
 
       {/* Page title in the middle */}
@@ -93,7 +106,7 @@ const SVG = ({ width, height }: { width: number; height: number }) => {
 
   return (
     <motion.svg
-      className="fixed w-screen h-screen pointer-events-none left-0 top-0 z-50"
+      className="fixed w-full h-full pointer-events-none left-0 top-0 z-50"
       {...anim(translate)}
     >
       <motion.path {...anim(curve(initialPath, targetPath))} />
