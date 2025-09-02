@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Curve, Marquee, Ready } from "@/components";
 import { About, Clients, Hero, Projects, VideoHome } from "@/container";
+import WhatsAppButton from "@/components/WhatsAppButton"; // Add this import
 
 export default function Home() {
 	useEffect(() => {
@@ -26,11 +27,15 @@ export default function Home() {
 					/>
 				</div>
 				<About />
-				
 				<Projects />
 				<Clients />
-				
 			</Curve>
+			
+			{/* WhatsApp Button - Add this outside Curve component */}
+			<WhatsAppButton 
+				phoneNumber="1234567890" // Replace with your actual WhatsApp number
+				message="Hi! Any help? Contact us" 
+			/>
 		</>
 	);
 }
