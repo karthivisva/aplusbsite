@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -30,11 +29,13 @@ export default function Curve({
   backgroundColor: string;
 }) {
   const router = useRouter();
-  const [dimensions, setDimensions] = useState<{ width: number | null; height: number | null }>({
-    width: null,
-    height: null,
+  const [dimensions, setDimensions] = useState<{
+    width: number;
+    height: number;
+  }>({
+    width: 0,
+    height: 0,
   });
-  const [showOverlay, setShowOverlay] = useState(true);
 
   useEffect(() => {
     function resize() {
@@ -43,68 +44,69 @@ export default function Curve({
         height: window.innerHeight,
       });
     }
-
+    
     resize();
     window.addEventListener("resize", resize);
-
-    // Hide overlay after 500ms
-    const timer = setTimeout(() => setShowOverlay(false), 500);
-
-    return () => {
-      window.removeEventListener("resize", resize);
-      clearTimeout(timer);
-    };
+    return () => window.removeEventListener("resize", resize);
   }, []);
 
   return (
-    <div style={{ backgroundColor }} className="overflow-x-hidden relative w-full min-h-screen">
-      {/* Fullscreen black overlay */}
+    <div 
+      style={{ backgroundColor }} 
+      className="relative min-h-screen w-full overflow-hidden"
+    >
+      {/* Black overlay while measuring dimensions */}
       <motion.div
+        style={{ opacity: dimensions.width === 0 ? 1 : 0 }}
+        className="fixed inset-0 w-full h-full pointer-events-none z-50 bg-black"
         initial={{ opacity: 1 }}
-        animate={{ opacity: showOverlay ? 1 : 0 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="fixed top-0 left-0 w-full h-full z-[9999] pointer-events-none bg-black"
+        animate={{ opacity: dimensions.width === 0 ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
       />
 
       {/* Page title in the middle */}
       <motion.p
-        className="absolute left-1/2 top-[40%] text-white text-[50px] z-[60] -translate-x-1/2 text-center"
+        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl md:text-5xl lg:text-6xl z-[60] text-center whitespace-nowrap px-4"
         {...anim(text)}
       >
-        {routes[router.route]}
+        {routes[router.route] || "PAGE"}
       </motion.p>
 
       {/* Animated curve SVG */}
-      {dimensions.width != null && dimensions.height != null && <SVG width={dimensions.width} height={dimensions.height} />}
+      {dimensions.width > 0 && dimensions.height > 0 && (
+        <SVG width={dimensions.width} height={dimensions.height} />
+      )}
 
-      {children}
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   );
 }
 
 const SVG = ({ width, height }: { width: number; height: number }) => {
-  const initialPath = `
-    M0 300 
-    Q${width / 2} 0 ${width} 300
-    L${width} ${height + 300}
-    Q${width / 2} ${height + 600} 0 ${height + 300}
-    L0 0
-  `;
+  // Fixed path definitions with proper template literal syntax
+  const initialPath = `M0 300 Q${width / 2} 0 ${width} 300 L${width} ${
+    height + 300
+  } Q${width / 2} ${height + 600} 0 ${height + 300} L0 0`;
 
-  const targetPath = `
-    M0 300
-    Q${width / 2} 0 ${width} 300
-    L${width} ${height}
-    Q${width / 2} ${height} 0 ${height}
-    L0 0
-  `;
+  const targetPath = `M0 300 Q${width / 2} 0 ${width} 300 L${width} ${height} Q${
+    width / 2
+  } ${height} 0 ${height} L0 0`;
 
   return (
     <motion.svg
-      className="fixed w-screen h-screen pointer-events-none left-0 top-0 z-50"
+      className="fixed inset-0 w-full h-full pointer-events-none z-50"
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
+      preserveAspectRatio="none"
       {...anim(translate)}
     >
-      <motion.path {...anim(curve(initialPath, targetPath))} />
+      <motion.path
+        fill="black"
+        {...anim(curve(initialPath, targetPath))}
+      />
     </motion.svg>
   );
 };
