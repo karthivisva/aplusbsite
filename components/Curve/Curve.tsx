@@ -65,8 +65,10 @@ export default function Curve({
           position: "fixed",
           top: 0,
           left: 0,
-          width: "100vw",
-          height: "100vh",
+          right: 0,
+          bottom: 0,
+          width: "100%",
+          height: "100%",
           backgroundColor: "black",
           zIndex: 9999,
           pointerEvents: "none",
@@ -87,8 +89,9 @@ export default function Curve({
           position: "fixed",
           bottom: 0,
           left: 0,
-          width: "100vw",
-          height: "100vh",
+          right: 0,
+          width: "100%",
+          height: "100%",
           backgroundColor: "black",
           zIndex: 9998,
           pointerEvents: "none",
@@ -120,7 +123,14 @@ export default function Curve({
       </motion.p>
 
       {/* Main content */}
-      <div style={{ backgroundColor }}>
+      <div 
+        style={{ 
+          backgroundColor,
+          width: '100%',
+          minHeight: '100vh',
+          overflow: 'hidden'
+        }}
+      >
         {children}
       </div>
     </>
