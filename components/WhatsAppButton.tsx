@@ -1,9 +1,19 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const WhatsAppButton = ({ phoneNumber = "1234567890", message = "Hi! Any help? Contact us" }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(false);
+// Define the props interface
+interface WhatsAppButtonProps {
+  phoneNumber?: string;
+  message?: string;
+}
+
+const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ 
+  phoneNumber = "1234567890", 
+  message = "Hi! Any help? Contact us" 
+}) => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [showTooltip, setShowTooltip] = useState<boolean>(false);
 
   useEffect(() => {
     // Show button after 2 seconds
@@ -33,7 +43,7 @@ const WhatsAppButton = ({ phoneNumber = "1234567890", message = "Hi! Any help? C
     }
   }, [isVisible]);
 
-  const handleWhatsAppClick = () => {
+  const handleWhatsAppClick = (): void => {
     const encodedMessage = encodeURIComponent("Hi! I need help with your services.");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
@@ -133,41 +143,4 @@ const WhatsAppButton = ({ phoneNumber = "1234567890", message = "Hi! Any help? C
   );
 };
 
-// Example usage component
-const App = () => {
-  return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Your Website Content</h1>
-      <p className="text-center text-gray-600 mb-8">
-        The WhatsApp button will appear in the bottom-right corner after 2 seconds
-      </p>
-      
-      <div className="max-w-4xl mx-auto space-y-8">
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h2 className="text-xl font-semibold mb-4">Sample Content</h2>
-          <p className="text-gray-600">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-            nostrud exercitation ullamco laboris.
-          </p>
-        </div>
-        
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h2 className="text-xl font-semibold mb-4">More Content</h2>
-          <p className="text-gray-600">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-          </p>
-        </div>
-      </div>
-      
-      {/* WhatsApp Button Component */}
-      <WhatsAppButton 
-        phoneNumber="1234567890" 
-        message="Hi! Any help? Contact us" 
-      />
-    </div>
-  );
-};
-
-export default App;
+export default WhatsAppButton;
