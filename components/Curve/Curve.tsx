@@ -30,9 +30,9 @@ export default function Curve({
   backgroundColor: string;
 }) {
   const router = useRouter();
-  const [dimensions, setDimensions] = useState<{ width: number; height: number }>({
-    width: 0,
-    height: 0,
+  const [dimensions, setDimensions] = useState<{ width: number | null; height: number | null }>({
+    width: null,
+    height: null,
   });
   const [showOverlay, setShowOverlay] = useState(true);
 
@@ -47,7 +47,7 @@ export default function Curve({
     resize();
     window.addEventListener("resize", resize);
 
-    // Hide overlay after initial measurement
+    // Hide overlay after 500ms
     const timer = setTimeout(() => setShowOverlay(false), 500);
 
     return () => {
@@ -57,10 +57,7 @@ export default function Curve({
   }, []);
 
   return (
-    <div
-      style={{ backgroundColor }}
-      className="overflow-x-hidden relative w-full min-h-screen"
-    >
+    <div style={{ backgroundColor }} className="overflow-x-hidden relative w-full min-h-screen">
       {/* Fullscreen black overlay */}
       <motion.div
         initial={{ opacity: 1 }}
@@ -78,9 +75,7 @@ export default function Curve({
       </motion.p>
 
       {/* Animated curve SVG */}
-      {dimensions.width > 0 && dimensions.height > 0 && (
-        <SVG width={dimensions.width} height={dimensions.height} />
-      )}
+      {dimensions.width != null && dimensions.height != null && <SVG width={dimensions.width} height={dimensions.height} />}
 
       {children}
     </div>
@@ -106,7 +101,7 @@ const SVG = ({ width, height }: { width: number; height: number }) => {
 
   return (
     <motion.svg
-      className="fixed w-full h-full pointer-events-none left-0 top-0 z-50"
+      className="fixed w-screen h-screen pointer-events-none left-0 top-0 z-50"
       {...anim(translate)}
     >
       <motion.path {...anim(curve(initialPath, targetPath))} />
