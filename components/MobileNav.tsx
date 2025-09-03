@@ -25,11 +25,11 @@ export default function MobileNav() {
       >
         <Link href={"/"}>
           <div className="flex items-baseline gap-1">
-            <h1
-              className={`text-2xl font-bold tracking-wide ${inter.className} bg-gradient-to-r from-[#4d8045] to-[#88b164] bg-clip-text text-transparent`}
-            >
-              a plus b
-            </h1>
+                  <span className="bg-[#4d8045] px-2 py-1 rounded">
+  <span className="text-white text-[28px] font-bold tracking-wide">
+    a plus b
+  </span>
+    </span>
             <span
               className={`text-xs font-medium text-gray-700 ${inter.className}`}
             >

@@ -57,43 +57,56 @@ const reviews = [
 
 export default function Ratings() {
   return (
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px]">
-      {reviews.map((item, i) => (
-        <div
-          key={item.id}
-          className="relative w-full h-[35vh] sm:h-[30vh] lg:h-[40vh] rounded-[12px] overflow-hidden"
-        >
-          <Image
-            src={item.img}
-            alt="reviewImg"
-            fill
-            className="object-cover"
-            sizes="(max-width: 640px) 100vw, 
-                   (max-width: 1024px) 50vw, 
-                   33vw"
-          />
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-[15px]">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: i * 0.2,
-                ease: [0.4, 0, 0.2, 1],
-              }}
-              className="px-[20px] py-[12px] rounded-full border border-white bg-white/10 backdrop-blur-md"
-            >
-              <Link
-                href={item.link}
-                className="text-white text-[13px] sm:text-[14px] lg:text-[15px] leading-[20px] font-NeueMontreal text-center"
+    <section className="w-full pt- pb-12">
+      {/* Heading */}
+      <div className="text-center mb-8">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 font-NeueMontreal">
+          Our Core Strengths
+        </h2>
+        <p className="mt-1 text-gray-500 text-sm sm:text-base">
+          Excellence across design, technology, sustainability, and collaboration
+        </p>
+      </div>
+
+      {/* Grid */}
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px]">
+        {reviews.map((item, i) => (
+          <div
+            key={item.id}
+            className="relative w-full h-[35vh] sm:h-[30vh] lg:h-[40vh] rounded-[12px] overflow-hidden"
+          >
+            <Image
+              src={item.img}
+              alt="reviewImg"
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 100vw, 
+                     (max-width: 1024px) 50vw, 
+                     33vw"
+            />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-[15px]">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.3,
+                  delay: i * 0.1,
+                  ease: "easeOut",
+                }}
+                className="px-[20px] py-[12px] rounded-full border border-white bg-white/10 backdrop-blur-md"
               >
-                {item.label}
-              </Link>
-            </motion.div>
+                <Link
+                  href={item.link}
+                  className="text-white text-[13px] sm:text-[14px] lg:text-[15px] leading-[20px] font-NeueMontreal text-center"
+                >
+                  {item.label}
+                </Link>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 }

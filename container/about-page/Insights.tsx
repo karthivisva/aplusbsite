@@ -1,76 +1,64 @@
-import Link from "next/link";
-import Image from "next/image";
-import { latestItemss } from "@/constants";
+"use client";
+import { motion } from "framer-motion";
 
-export default function Insights() {
-	return (
-		<section className="w-full pb-[100px] lg:pb-[80px] md:pb-[60px] sm:pb-[40px] xm:pb-[40px] bg-background">
-			<div className="w-full flex flex-col justify-between">
-				<div className="w-full flex flex-col">
-					<div className="padding-x pb-[30px]">
-						<h2 className="sub-heading font-normal tracking-[-1.3px] text-[#212121] font-NeueMontreal">
-							Insights
-						</h2>
-					</div>
-					<div className="w-full border-t border-[#21212155] pt-[20px]">
-						<div className="w-full flex sm:flex-col xm:flex-col sm:gap-[20px] xm:gap-[20px] padding-x">
-							<div className="w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col">
-								<h3 className="text-[20px] leading-[30px] font-medium text-secondry font-NeueMontreal">
-									Latest Works
-								</h3>
-							</div>
-							<div className="w-[50%] sm:w-full xm:w-full sm:flex-col xm:flex-col">
-								{latestItemss.map((item) => (
-									<div
-										key={item.id}
-										className={`group relative overflow-hidden ${
-											item.id == 1 && "hidden"
-										} block`}>
-										<div className="w-full flex flex-col gap-[20px]">
-											<Link
-												className="w-[350px] overflow-hidden rounded-[15px]"
-												href={item.href}>
-												<Image
-													src={item.src}
-													alt="img"
-													className="w-full hover:scale-[1.09] transition transform duration-[1s] ease-[.4,0,.2,1]"
-												/>
-											</Link>
-											<div className="flex gap-[10px] items-center absolute left-[25px] top-[25px]">
-												{item.links.map((link) => (
-													<div
-														className="transform translate-y-[-200%] group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-														key={link.id}>
-														<div className="rounded-[50px] border border-about  py-[2px] px-[15px] cursor-pointer">
-															<Link
-																className="text-[18px] leading-[22px] font-NeueMontreal text-about uppercase"
-																href={"/"}>
-																{link.title}
-															</Link>
-														</div>
-													</div>
-												))}
-											</div>
-											<div className="flex flex-col gap-[7px]">
-												<h3 className="text-[20px] leading-[30px] font-NeueMontreal font-normal text-secondry">
-													Presenting to an International Audience: <br /> Tips
-													and Lessons Learned.
-												</h3>
-												<p className="text-[20px] leading-[30px] font-NeueMontreal font-normal text-gray-400">
-													{item.subTitle}
-												</p>
-												<p className="text-[20px] leading-[30px] font-NeueMontreal font-normal text-gray-400">
-													{item.date}
-												</p>
-											</div>
-										</div>
-									</div>
-								))}
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+export default function AboutAplusB() {
+  const sections = [
+    {
+      id: 1,
+      title: "Company Overview",
+      description: `AplusB Consortium is an innovative firm with nearly a decade of experience in providing comprehensive, "one-roof" solutions for all construction needs. They specialize in architecture, interior design, and construction, handling projects from scratch or renovation. The company prides itself on collaboration and leveraging cutting-edge technologies like 3D printing, 3D modeling, and AR/VR.`,
+    },
+    {
+      id: 2,
+      title: "Core Values & Mission",
+      description: `Mission: To interpret clients' needs and desires into tangible realities, creating spaces that are both beautiful and functional. Values: Commitment to quality, innovation, and customer satisfaction, using the best materials and professionals, the latest trends and technologies, and prioritizing open communication.`,
+    },
+    {
+      id: 3,
+      title: "Expertise & Services",
+      description: `Architecture: Conceptual design, design development, construction documents, cost estimation, permit acquisition, sustainability consulting, 3D visualization. 
+Interior Design: Space planning, concept development, material/finish selection, FF&E specification, lighting and custom furniture design.
+Construction: Residential (homes, villas, apartments), Commercial (offices, retail, hospitality), Industrial (factories, warehouses), Institutional (schools, hospitals, government buildings). Additional services: Structural engineering, MEP design, renovations, landscape architecture, acoustic design, branding & identity.`,
+    },
+    {
+      id: 4,
+      title: "Project Portfolio",
+      description: `Residential: Mr. Rajasekar's Residence (Coimbatore, 4,000 sq. ft.), Mr. Selvaraj's Villa (Salem, 5,000 sq. ft.), Dr. Elango's Residence (Salem, 5,500 sq. ft.), Mrs. Priya's Beach House (Chennai, 10,000 sq. ft.), Mr. Gokul's Residence (Salem, 2,200 sq. ft.), Singanallur Apartment (Coimbatore, 22,000 sq. ft.).
+Commercial & Institutional Interiors: Airforce's Cafe (Coimbatore, 1,600 sq. ft.), Airforce's Library (Coimbatore, 1,500 sq. ft.), Kauvery Hospital (Trichy, 3,800 sq. ft.), Globus Arima Office (Coimbatore, 9,000 sq. ft.).`,
+    },
+  ];
+
+  return (
+    <section className="w-full bg-background py-[80px] px-[20px] sm:py-[60px] xm:py-[40px]">
+      <div className="max-w-[1240px] mx-auto flex flex-col gap-[40px]">
+        <h2 className="sub-heading font-NeueMontreal text-[#212121] text-[36px] sm:text-[28px] xm:text-[24px] font-medium">
+          About AplusB Consortium
+        </h2>
+
+        <div className="flex flex-col gap-[30px]">
+          {sections.map((sec, idx) => (
+            <motion.div
+              key={sec.id}
+              initial={{ opacity: 0, y: 20, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: idx * 0.15,
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              className="bg-[#1F1F1F] text-white rounded-[15px] p-[25px] shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <h3 className="font-NeueMontreal font-semibold text-[20px] sm:text-[18px] xm:text-[16px] mb-[10px]">
+                {sec.title}
+              </h3>
+              <p className="font-NeueMontreal text-gray-400 text-[14px] sm:text-[13px] xm:text-[12px] leading-[22px] whitespace-pre-line">
+                {sec.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

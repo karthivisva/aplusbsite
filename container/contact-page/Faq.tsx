@@ -1,10 +1,51 @@
 "use client";
 import { useState } from "react";
-import { FaqItems } from "@/constants"; // ✅ removed clientsItem
 import { motion, AnimatePresence } from "framer-motion";
 
+const FaqItems = [
+  {
+    id: 1,
+    question: "What kind of projects do you handle?",
+    title: "Answer",
+    description:
+      "We handle a wide range of projects from commercial buildings to interior works, hospitals, showrooms, and more, delivering high-quality results on time.",
+    links: [
+      { id: 1, title: "Example:", description: "MPAC, Kauvery Hospital, Indian Air Force" },
+    ],
+  },
+  {
+    id: 2,
+    question: "Do you offer interior design services?",
+    title: "Answer",
+    description:
+      "Yes, our multidisciplinary team provides comprehensive interior design solutions tailored to your needs, from concept to execution.",
+    links: [
+      { id: 1, title: "Recent Projects:", description: "Campus Showroom, Arima & Globus, Dhiya Foundation" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Where are your offices located?",
+    title: "Answer",
+    description:
+      "Our main office is located in Coimbatore, with projects across Tamil Nadu, including Salem, Trichy, and beyond.",
+    links: [
+      { id: 1, title: "Address:", description: "134, 3rd floor, Kalidas Road, Ramnagar, Coimbatore - 641 009" },
+    ],
+  },
+  {
+    id: 4,
+    question: "How can I get a quote for my project?",
+    title: "Answer",
+    description:
+      "You can reach out via our contact form, email, or phone. Provide us with the project details, and we’ll get back with a detailed proposal.",
+    links: [
+      { id: 1, title: "Email:", description: "aplusbconsortium@gmail.com" },
+    ],
+  },
+];
+
 export default function Faq() {
-  // ✅ Start with the first FAQ item active
   const [activeAccordion, setActiveAccordion] = useState(FaqItems[0]?.id || null);
 
   const toggleAccordion = (itemId: number) => {
@@ -14,16 +55,14 @@ export default function Faq() {
   return (
     <section className="w-full padding-y mt-[-10px] bg-background z-30 relative rounded-t-[20px]">
       <h1 className="sub-heading padding-x font-medium font-NeueMontreal text-secondry pb-[50px]">
-        A few things you <br />
-        may want to ask us:
+        A few things you <br /> may want to ask us:
       </h1>
+
       {FaqItems.map((item) => (
         <div
           key={item.id}
           className={`w-full flex py-[10px] flex-col ${
-            item.id === 1
-              ? "border-y border-[#21212155]"
-              : "border-b border-[#21212155]"
+            item.id === 1 ? "border-y border-[#21212155]" : "border-b border-[#21212155]"
           }`}
         >
           {/* Question Row */}
@@ -42,9 +81,7 @@ export default function Faq() {
               <div className="flex items-end justify-end">
                 <button
                   className={`paragraph font-normal font-NeueMontreal uppercase transition-all duration-200 ease-in-out ${
-                    activeAccordion === item.id
-                      ? "text-gray-300"
-                      : "text-secondry link-flash"
+                    activeAccordion === item.id ? "text-gray-300" : "text-secondry link-flash"
                   }`}
                   onClick={() => toggleAccordion(item.id)}
                 >
@@ -70,11 +107,9 @@ export default function Faq() {
                     }}
                   >
                     <div className="flex flex-col gap-[20px] py-[30px]">
-                      <div>
-                        <p className="paragraph tracking-wider font-normal font-NeueMontreal text-secondry">
-                          {item.description}
-                        </p>
-                      </div>
+                      <p className="paragraph tracking-wider font-normal font-NeueMontreal text-secondry">
+                        {item.description}
+                      </p>
                       {item.links.map((link) => (
                         <div
                           key={link.id}

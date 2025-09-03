@@ -29,9 +29,11 @@ export default function Navbar() {
         {/* Logo Section */}
         <div className="w-[50%]">
           <Link href={"/"} className="flex items-baseline gap-1">
-            <span className="text-[28px] font-bold tracking-wide bg-gradient-to-r from-[#4d8045] to-[#b3d297] bg-clip-text text-transparent">
-              a plus b
-            </span>
+           <span className="bg-[#4d8045] px-2 py-1 rounded">
+  <span className="text-white text-[28px] font-bold tracking-wide">
+    a plus b
+  </span>
+</span>
             <span className="text-[14px] font-medium text-black">
               Consortium
             </span>

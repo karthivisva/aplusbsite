@@ -5,6 +5,15 @@
 html {
 	overflow-x: hidden;
 }
+.text-mask {
+  background: url("/aboutImg.webp"); /* Put your galaxy image here */
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
 
 body::-webkit-scrollbar {
 	width: 0;

@@ -1,42 +1,65 @@
+"use client";
 import Link from "next/link";
-import Image from "next/image";
-import { latestItemss } from "@/constants";
-import { Rounded, Tags } from "@/components";
+import { Tags } from "@/components";
 
 export default function Hero() {
-	const str = [
+	const categories = [
+		{ id: 1, title: "all", href: "/" },
+		{ id: 2, title: "architecture", href: "/" },
+		{ id: 3, title: "interior design", href: "/" },
+		{ id: 4, title: "construction", href: "/" },
+	];
+
+	const latestInsights = [
 		{
 			id: 1,
-			title: "all",
-			href: "/",
+			title: "Designing Sustainable Office Spaces",
+			subTitle: "How eco-friendly design can improve productivity and well-being.",
+			date: "Aug 15, 2025",
+			href: "/insights/sustainable-office-spaces",
+			links: [
+				{ id: 1, title: "Architecture", href: "/" },
+				{ id: 2, title: "Interior Design", href: "/" },
+			],
 		},
 		{
 			id: 2,
-			title: "presentation template",
-			href: "/",
+			title: "Maximizing Commercial Spaces",
+			subTitle: "Tips for creating functional and aesthetically pleasing commercial areas.",
+			date: "Jul 30, 2025",
+			href: "/insights/commercial-space-optimization",
+			links: [{ id: 1, title: "Construction", href: "/" }],
 		},
 		{
 			id: 3,
-			title: "public speaking",
-			href: "/",
+			title: "Trends in Modern Residential Interiors",
+			subTitle: "Innovative interior solutions that blend style and comfort.",
+			date: "Jul 12, 2025",
+			href: "/insights/residential-interior-trends",
+			links: [
+				{ id: 1, title: "Interior Design", href: "/" },
+			],
 		},
 		{
 			id: 4,
-			title: "storytelling",
-			href: "/",
+			title: "Smart Building Technologies",
+			subTitle: "Leveraging technology for efficient and sustainable building management.",
+			date: "Jun 25, 2025",
+			href: "/insights/smart-building-tech",
+			links: [{ id: 1, title: "Construction", href: "/" }],
 		},
 	];
+
 	return (
 		<section className="w-full min-h-screen">
 			<div className="w-full flex flex-col justify-between">
 				<div className="w-full flex flex-col">
 					<div className="w-full margin padding-x">
-						<div>
-							<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase">
-								INSIGHTS
-							</h1>
-						</div>
+						<h1 className="heading tracking-[-1.3px] text-[#212121] font-semibold font-FoundersGrotesk uppercase">
+							INSIGHTS
+						</h1>
 					</div>
+
 					<div className="w-full border-t border-[#21212155] pt-[20px]">
 						<div className="w-full flex justify-between padding-x sm:flex-col xm:flex-col gap-[20px]">
 							<div className="w-[50%] sm:w-full xm:w-full">
@@ -45,12 +68,10 @@ export default function Hero() {
 								</h3>
 							</div>
 							<div className="w-[50%] sm:w-full xm:w-full flex flex-wrap items-center gap-[10px]">
-								{str.map((item, i) => (
-									<div key={i}>
+								{categories.map((item) => (
+									<div key={item.id}>
 										{item.id === 1 ? (
-											<div
-												className="w-fit rounded-[50px] border border-[#21212199] cursor-pointer bg-black"
-												key={item.id}>
+											<div className="w-fit rounded-[50px] border border-[#21212199] cursor-pointer bg-black">
 												<Link
 													className="small-text font-NeueMontreal uppercase text-white"
 													href={item.href}>
@@ -71,39 +92,24 @@ export default function Hero() {
 							</div>
 						</div>
 					</div>
+
 					<div className="w-full padding-x">
-						<div className="w-[50%] sm:w-full xm:w-full flex gap-[20px] padding-y sm:flex-col xm:flex-col gap-y-[20px]">
-							{latestItemss.map((item) => (
-								<div
-									key={item.id}
-									className="group relative overflow-hidden">
+						<div className="w-full flex flex-col gap-[30px] padding-y sm:flex-col xm:flex-col gap-y-[20px]">
+							{latestInsights.map((item) => (
+								<div key={item.id} className="group relative overflow-hidden p-[15px] border border-[#21212133] rounded-[15px]">
 									<Link href={item.href}>
-										<div className="overflow-hidden rounded-[15px] transition cursor-pointer  transform duration-[1s] ease-[.4,0,.2,1]">
-											<Image
-												src={item.src}
-												alt="img"
-												className="sm:w-full xm:w-full hover:scale-[1.09] group-hover:scale-[1.09] transform duration-[1s] ease-[.4,0,.2,1]"
-											/>
-										</div>
-										<div className="flex gap-y-[10px] absolute left-[25px] top-[-100px] group-hover:top-[20px] flex-col">
-											{item.links.map((link) => (
-												<div
-													className="transform translate-y-[-200%] group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-													key={link.id}>
-													<div className="rounded-[50px] border border-secondry py-[3px] px-[15px] cursor-pointer">
-														<Link
-															className="small-text font-NeueMontreal text-secondry uppercase"
-															href={"/"}>
-															{link.title}
-														</Link>
+										<div className="flex flex-col gap-[10px]">
+											<div className="flex flex-wrap gap-[10px]">
+												{item.links.map((link) => (
+													<div
+														key={link.id}
+														className="rounded-[50px] border border-secondry py-[3px] px-[15px] cursor-pointer text-secondry small-text font-NeueMontreal uppercase">
+														{link.title}
 													</div>
-												</div>
-											))}
-										</div>
-										<div className="flex flex-col gap-[7px] mt-[10px]">
-											<h3 className="paragraph font-NeueMontreal font-normal text-secondry">
-												Presenting to an International Audience: <br /> Tips and
-												Lessons Learned.
+												))}
+											</div>
+											<h3 className="paragraph font-NeueMontreal font-semibold text-secondry">
+												{item.title}
 											</h3>
 											<p className="paragraph font-NeueMontreal font-normal text-gray-400">
 												{item.subTitle}

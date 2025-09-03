@@ -2,24 +2,19 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { text, translate } from "@/motion";
 
 const routes: Record<string, string> = {
   "/": "HOME",
   "/services": "SERVICES",
   "/presentation": "OUR WORKS",
+  "/promotions": "PROMOTIONS",
+  "/career": "CAREERS",   // singular route
+  "/careers": "CAREERS",  // plural fallback
   "/ochi-team": "ABOUT US",
-  "/insights": "Insights",
-  "/contact": "Contact Us",
-  "/case": "Workiz Easy",
+  "/insights": "INSIGHTS",
+  "/contact": "CONTACT US",
+  "/case": "WORKIZ EASY",
 };
-
-const anim = (variants: any) => ({
-  variants,
-  initial: "initial",
-  animate: "enter",
-  exit: "exit",
-});
 
 export default function Curve({
   children,
@@ -29,10 +24,7 @@ export default function Curve({
   backgroundColor: string;
 }) {
   const router = useRouter();
-  const [dimensions, setDimensions] = useState<{
-    width: number;
-    height: number;
-  }>({
+  const [dimensions, setDimensions] = useState<{ width: number; height: number }>({
     width: 0,
     height: 0,
   });
@@ -44,11 +36,15 @@ export default function Curve({
         height: window.innerHeight,
       });
     }
-    
+
     resize();
     window.addEventListener("resize", resize);
     return () => window.removeEventListener("resize", resize);
   }, []);
+
+  // ✅ safer: check pathname and asPath (works for promotions + career)
+  const currentRoute =
+    routes[router.pathname] || routes[router.asPath] || "PAGE";
 
   return (
     <>
@@ -57,9 +53,9 @@ export default function Curve({
         initial={{ y: 0 }}
         animate={{ y: dimensions.width === 0 ? 0 : "-100%" }}
         exit={{ y: 0 }}
-        transition={{ 
-          duration: 0.8, 
-          ease: [0.76, 0, 0.24, 1] 
+        transition={{
+          duration: 0.8,
+          ease: [0.76, 0, 0.24, 1],
         }}
         style={{
           position: "fixed",
@@ -80,10 +76,10 @@ export default function Curve({
         initial={{ y: 0 }}
         animate={{ y: dimensions.width === 0 ? 0 : "100%" }}
         exit={{ y: 0 }}
-        transition={{ 
-          duration: 0.8, 
+        transition={{
+          duration: 0.8,
           ease: [0.76, 0, 0.24, 1],
-          delay: 0.1 
+          delay: 0.1,
         }}
         style={{
           position: "fixed",
@@ -99,7 +95,7 @@ export default function Curve({
         }}
       />
 
-      {/* Page title */}
+      {/* Page title animation */}
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: dimensions.width === 0 ? 1 : 0 }}
@@ -119,16 +115,16 @@ export default function Curve({
           pointerEvents: "none",
         }}
       >
-        {routes[router.route] || "PAGE"}
+        {currentRoute}
       </motion.p>
 
       {/* Main content */}
-      <div 
-        style={{ 
+      <div
+        style={{
           backgroundColor,
-          width: '100%',
-          minHeight: '100vh',
-          overflow: 'hidden'
+          width: "100%",
+          minHeight: "100vh",
+          overflow: "hidden",
         }}
       >
         {children}

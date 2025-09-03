@@ -1,19 +1,61 @@
 "use client";
 import { useState } from "react";
-import { Marquee } from "@/components";
-import { TextHover } from "@/animation";
-import { expectationsItems } from "@/constants";
 import { AnimatePresence, motion } from "framer-motion";
+import { TextHover } from "@/animation";
+import { Marquee } from "@/components";
 
 export default function Expectations() {
-	const [openItemId, setOpenItemId] = useState(null);
+	const [openItemId, setOpenItemId] = useState<number | null>(null);
 
-	const handleButtonClick = (id: any) => {
+	const expectationsItems = [
+		{
+			id: 1,
+			title1: "Holistic Expertise",
+			subTitle1: "Complete solutions from design to execution.",
+			btn: "Read more",
+			para1:
+				"APLUSB Consortium provides end-to-end solutions, covering architecture, interior design, and full construction with seamless execution.",
+		},
+		{
+			id: 2,
+			title1: "Technology Driven",
+			subTitle1: "Leaders in BIM, 3D printing, and AR/VR applications.",
+			btn: "Read more",
+			para1:
+				"We leverage cutting-edge technology to deliver accurate designs, interactive presentations, and innovative building solutions.",
+		},
+		{
+			id: 3,
+			title1: "Sustainable Focus",
+			subTitle1: "Eco-friendly designs that respect the environment.",
+			btn: "Read more",
+			para1:
+				"Our projects are designed with sustainability in mind, combining efficient resource use and environmental responsibility.",
+		},
+		{
+			id: 4,
+			title1: "Client-Centric Approach",
+			subTitle1: "Personalized, transparent, and collaborative.",
+			btn: "Read more",
+			para1:
+				"We put clients first, keeping you informed and involved at every stage to ensure the final result reflects your vision.",
+		},
+		{
+			id: 5,
+			title1: "Multidisciplinary Team",
+			subTitle1: "Architects, engineers, designers, and managers working seamlessly.",
+			btn: "Read more",
+			para1:
+				"Our team collaborates across disciplines to deliver integrated, high-quality solutions for every project.",
+		},
+	];
+
+	const handleButtonClick = (id: number) => {
 		setOpenItemId(openItemId === id ? null : id);
 	};
 
 	return (
-		<section className="w-full bg-marquee  padding-y rounded-t-[20px]">
+		<section className="w-full bg-marquee padding-y rounded-t-[20px]">
 			<div className="w-full bg-marquee z-10 relative rounded-t-[20px]">
 				<Marquee
 					title="why us other"
@@ -24,7 +66,7 @@ export default function Expectations() {
 				<div className="w-full flex justify-between sm:flex-col xm:flex-col sm:gap-[20px] xm:gap-[20px]">
 					<div className="w-[50%] sm:w-full xm:w-full">
 						<h3 className="paragraph font-medium text-white font-NeueMontreal">
-							What you can expect?
+							Why Choose APLUSB Consortium?
 						</h3>
 					</div>
 					<div className="w-[50%] sm:w-full xm:w-full flex flex-wrap gap-[20px]">
@@ -33,17 +75,14 @@ export default function Expectations() {
 								className="w-[345px] flex justify-between gap-x-[20px] sm:flex-col xm:flex-col gap-[20px]"
 								key={item.id}>
 								<div className="bg-[#145B52] w-full flex flex-col rounded-[20px] px-[30px] py-[20px]">
-									<div className="flex gap-x-[10px] items-center pb-[10px] mb-[100px] ">
+									<div className="flex gap-x-[10px] items-center pb-[10px] mb-[100px]">
 										<h1 className="sub-heading font-normal font-NeueMontreal text-white">
 											{item.title1}
 										</h1>
 									</div>
 									<div className="w-full flex justify-between items-center">
 										<button className="small-text font-normal font-NeueMontreal text-white">
-											<TextHover
-												titile1={item.subTitle1}
-												titile2={item.subTitle1}
-											/>
+											<TextHover titile1={item.subTitle1} titile2={item.subTitle1} />
 										</button>
 										<button
 											onClick={() => handleButtonClick(item.id)}
@@ -51,10 +90,7 @@ export default function Expectations() {
 											{openItemId === item.id ? (
 												"hide"
 											) : (
-												<TextHover
-													titile1={item.btn}
-													titile2={item.btn}
-												/>
+												<TextHover titile1={item.btn} titile2={item.btn} />
 											)}
 										</button>
 									</div>

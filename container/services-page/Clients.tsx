@@ -26,13 +26,7 @@ leading BIM adoption, feasibility studies, and AR/VR prototypes for client prese
 			details: `Ensures structural durability, soil/material analysis, 
 eco-friendly practices like rainwater harvesting, and compliance with IS/global standards.`,
 		},
-		{
-			id: 4,
-			name: "SIVA PRANAVESH",
-			role: "Project Manager — Execution Strategist & Client Liaison",
-			details: `Develops project plans, budgets, timelines, manages risk, 
-coordinates stakeholders, and uses AR/VR for client approvals.`,
-		},
+		
 		{
 			id: 5,
 			name: "VARATHARAJAPERMAL N",
@@ -54,13 +48,7 @@ and supervises site implementations.`,
 			details: `Creates 3D models, renders, AR/VR walk-throughs, compliance reports, 
 and ensures construction accuracy.`,
 		},
-		{
-			id: 8,
-			name: "LOGESHWARAN A",
-			role: "Graphic Designer — Visual Communicator & Brand Storyteller",
-			details: `Designs branding materials, architectural presentation boards, 
-AR/VR visuals, and manages APLUSB’s digital/print identity.`,
-		},
+		
 	];
 
 	const [activeAccordion, setActiveAccordion] = useState<number | null>(team[0].id);

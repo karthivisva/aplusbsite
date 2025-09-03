@@ -9,12 +9,12 @@ export const navbarItems = [
    },
    {
       id: 2,
-      title: "Our work",
+      title: "Our Work",
       href: "/presentation",
    },
    {
       id: 3,
-      title: "About us",
+      title: "About Us",
       href: "/ochi-team",
    },
    {
@@ -24,7 +24,18 @@ export const navbarItems = [
    },
    {
       id: 5,
-      title: "Contact us",
+      title: "Promotions",   // ✅ new
+      href: "/promotions",
+   },
+{
+   id: 6,
+   title: "Careers",
+   href: "/career", // 👈 singular
+},
+
+   {
+      id: 7,
+      title: "Contact Us",
       href: "/contact",
    },
 ];
@@ -49,6 +60,7 @@ export const footerItems = [
    },
 ];
 
+// constants/index.ts
 export const footernavbarItems = [
    {
       id: 1,
@@ -58,27 +70,38 @@ export const footernavbarItems = [
    {
       id: 2,
       title: "Services",
-      href: "services",
+      href: "/services",
    },
    {
       id: 3,
-      title: "Our work",
-      href: "presentation",
+      title: "Our Work",
+      href: "/presentation",
    },
    {
       id: 4,
-      title: "About us",
-      href: "ochi-team",
+      title: "About Us",
+      href: "/ochi-team",
    },
    {
       id: 5,
       title: "Insights",
-      href: "insights",
+      href: "/insights",
    },
    {
       id: 6,
-      title: "Contact us",
-      href: "contact",
+      title: "Promotions",   // ✅ Added
+      href: "/promotions",
+   },
+   {
+      id: 7,
+      title: "Careers",      // ✅ Added
+      href: "/career",
+   },
+   
+   {
+      id: 8,
+      title: "Contact Us",
+      href: "/contact",
    },
 ];
 

@@ -60,13 +60,7 @@ export default function Hero() {
 						</div>
 
 						<div>
-							<Image
-								src={awwwards}
-								alt="awwwards"
-								width={60}
-								height={60}
-								className="xm:hidden sm:hidden"
-							/>
+							
 						</div>
 					</div>
 
@@ -86,7 +80,7 @@ export default function Hero() {
 								
 								<div>
 									<p className="paragraph font-NeueMontreal text-secondry">
-										From the first 
+								
 									</p>
 								</div>
 
@@ -112,18 +106,7 @@ export default function Hero() {
 
 						{/* Scroll Down Animation */}
 						<div className="w-full flex items-center overflow-hidden justify-center xm:hidden sm:hidden">
-							<motion.p
-								initial={{ y: "-100%", opacity: 0 }}
-								animate={{ y: "100%", opacity: 0.5 }}
-								transition={{
-									duration: 1.8,
-									repeat: Infinity,
-									ease: [0.3, 0.86, 0.36, 0.95],
-								}}
-								className="paragraph opacity-50 font-NeueMontreal text-secondry"
-							>
-								scroll down
-							</motion.p>
+					
 						</div>
 					</div>
 				</div>

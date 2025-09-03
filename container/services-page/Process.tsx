@@ -1,12 +1,44 @@
-import Image from "next/image";
 import { useState } from "react";
-import { serviceProcessItems } from "@/constants";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Process() {
-	const [activeAccordion, setActiveAccordion] = useState(
-		serviceProcessItems[0].id,
-	);
+	const processItems = [
+		{
+			id: 1,
+			phase: "Planning",
+			name: "Concept & Design",
+			button: "View",
+			review:
+				"We start by understanding your vision and requirements, creating detailed plans for architecture, interior, and construction.",
+		},
+		{
+			id: 2,
+			phase: "Design Development",
+			name: "Architecture & Interiors",
+			button: "View",
+			review:
+				"Our architects and interior designers collaborate to create functional, aesthetic, and innovative spaces tailored to your needs.",
+		},
+		{
+			id: 3,
+			phase: "Execution",
+			name: "Construction",
+			button: "View",
+			review:
+				"We manage the full construction process, ensuring quality, safety, and timely delivery from foundation to finishing touches.",
+		},
+		{
+			id: 4,
+			phase: "Completion",
+			name: "Handover & Support",
+			button: "View",
+			review:
+				"After project completion, we provide thorough handover documentation and ongoing support to ensure your space is fully functional and maintained.",
+		},
+	];
+
+	const [activeAccordion, setActiveAccordion] = useState(processItems[0].id);
+
 	const toggleAccordion = (itemId: any) => {
 		setActiveAccordion((prev) => (prev === itemId ? null : itemId));
 	};
@@ -15,14 +47,14 @@ export default function Process() {
 		<section className="w-full padding-y">
 			<div className="w-full padding-x mb-[40px]">
 				<h1 className="sub-heading font-medium font-NeueMontreal text-secondry">
-					Holistic process
+					Holistic Process
 				</h1>
 			</div>
-			{serviceProcessItems.map((item) => (
+			{processItems.map((item) => (
 				<div
 					key={item.id}
 					className={`w-full flex py-[10px] flex-col ${
-						item.id == 1
+						item.id === 1
 							? "border-y border-[#21212155]"
 							: "border-b border-[#21212155]"
 					}`}>
@@ -49,8 +81,7 @@ export default function Process() {
 							</button>
 						</div>
 					</div>
-					<div
-						className={`w-full flex justify-between padding-x sm:flex-col xm:flex-col`}>
+					<div className="w-full flex justify-between padding-x sm:flex-col xm:flex-col">
 						<div className="w-[50%] sm:hidden xm:hidden" />
 						<div className="w-[40%] sm:w-full xm:w-full">
 							<AnimatePresence>
@@ -64,13 +95,6 @@ export default function Process() {
 											duration: 1.3,
 										}}>
 										<div className="flex flex-col gap-[20px] py-[30px]">
-											<div className="w-[130px] h-[130px]">
-												<Image
-													src={item.src}
-													alt="clientImg"
-													className="w-full h-full object-cover rounded-[10px]"
-												/>
-											</div>
 											<div>
 												<p className="paragraph tracking-wider font-normal font-NeueMontreal text-secondry">
 													{item.review}

@@ -15,7 +15,7 @@ export default function Form() {
 						<div className="w-full">
 							<input
 								type="text"
-								placeholder="Enter your name*"
+								placeholder="Enter your name"
 								className="paragraph w-full font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out sm:w-full xm:w-full"
 							/>
 						</div>
@@ -29,7 +29,7 @@ export default function Form() {
 						<div className="w-full">
 							<input
 								type="text"
-								placeholder="Compony name type here*"
+								placeholder="Compony name type here"
 								className="paragraph w-full font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out sm:w-full xm:w-full"
 							/>
 						</div>
@@ -45,7 +45,7 @@ export default function Form() {
 						<div className="w-full">
 							<input
 								type="text"
-								placeholder="Your goal type here*"
+								placeholder="Your goal type here"
 								className="paragraph font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
 						</div>
@@ -61,7 +61,7 @@ export default function Form() {
 						<div className="w-full">
 							<input
 								type="text"
-								placeholder="Date*"
+								placeholder="Date"
 								className="paragraph font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
 						</div>
@@ -77,7 +77,7 @@ export default function Form() {
 						<div className="w-full">
 							<input
 								type="text"
-								placeholder="Select*"
+								placeholder="Select"
 								className="paragraph font-NeueMontreal font-normal text-secondry bg-background border-b border-[#21212155] focus:border-secondry text-center sm:text-left xm:text-left outline-none focus:placeholder:opacity-0 mt-[20px] transform transition duration-200 ease-in-out w-full sm:w-full xm:w-full"
 							/>
 						</div>
