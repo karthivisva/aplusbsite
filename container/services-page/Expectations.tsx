@@ -40,14 +40,15 @@ export default function Expectations() {
 			para1:
 				"We put clients first, keeping you informed and involved at every stage to ensure the final result reflects your vision.",
 		},
-		{
-			id: 5,
-			title1: "Multidisciplinary Team",
-			subTitle1: "Architects, engineers, designers, and managers working seamlessly.",
-			btn: "Read more",
-			para1:
-				"Our team collaborates across disciplines to deliver integrated, high-quality solutions for every project.",
-		},
+	{
+	id: 5,
+	title1: "Expert Team",
+	subTitle1: "Experts working seamlessly together.",
+	btn: "Read more",
+	para1:
+		"Our team of architects, engineers, and designers collaborate to deliver high-quality solutions.",
+},
+
 	];
 
 	const handleButtonClick = (id: number) => {
