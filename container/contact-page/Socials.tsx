@@ -8,7 +8,7 @@ import { Eyes } from "@/components";
 
 export default function Socials() {
   const [rotate, setRotate] = useState(0);
-  const phrase = ["INSTAGRAM", "FACEBOOK", "LINKEDIN"];
+  const phrase = ["INSTAGRAM", "FACEBOOK", "YouTUBE"];
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
