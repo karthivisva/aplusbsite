@@ -7,7 +7,7 @@ import { footernavbarItems } from "@/constants";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { AnimatePresence, motion } from "framer-motion";
 
-// Import Inter font (for logo + consortium)
+// Import Inter font (for Consortium text)
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"], weight: ["600", "700"] });
 
@@ -25,15 +25,22 @@ export default function MobileNav() {
       >
         <Link href={"/"}>
           <div className="flex items-baseline gap-1">
-                  <span className="bg-[#4d8045] px-2 py-1 rounded">
-  <span className="text-white text-[28px] font-bold tracking-wide">
-    a plus b
-  </span>
-    </span>
-            <span
-              className={`text-xs font-medium text-gray-700 ${inter.className}`}
-            >
-              Consortium
+            {/* Smaller funky "a plus b" */}
+            <span className="bg-[#4d8045] px-2 py-1 rounded inline-block">
+              <span
+                className="text-white text-[22px] font-bold tracking-wide"
+                style={{
+                  fontFamily: "'Luckiest Guy', cursive",
+                  transform: "rotate(-5deg) skewX(-10deg)",
+                }}
+              >
+                a plus b
+              </span>
+            </span>
+
+            {/* Smaller bold Consortium */}
+            <span className="text-[24px] font-extrabold text-black">
+              CONSORTIUM
             </span>
           </div>
         </Link>
@@ -57,21 +64,28 @@ export default function MobileNav() {
             <div className="w-full flex justify-between items-center h-[8vh] border-b border-[#f1f1f155] padding-x bg-[#f1f1f1]">
               <Link href={"/"}>
                 <div className="flex items-baseline gap-1">
-                  <h1
-                    className={`text-3xl font-bold tracking-wide ${inter.className} bg-gradient-to-r from-[#4d8045] to-[#45850c] bg-clip-text text-transparent`}
-                  >
-                    a plus b
-                  </h1>
-                  <span
-                    className={`text-sm font-medium text-gray-700 ${inter.className}`}
-                  >
-                    Consortium
+                  {/* Smaller funky "a plus b" in menu */}
+                  <span className="inline-block">
+                    <span
+                      className="bg-[#4d8045] px-2 py-1 rounded inline-block text-white text-[22px] font-bold tracking-wide"
+                      style={{
+                        fontFamily: "'Luckiest Guy', cursive",
+                   
+                      }}
+                    >
+                      a plus b
+                    </span>
+                  </span>
+
+                  {/* Smaller bold Consortium in menu */}
+                  <span className="text-[22px] font-extrabold text-black">
+                    CONSORTIUM
                   </span>
                 </div>
               </Link>
               <IoMdClose
                 onClick={() => setToggle(false)}
-                className="text-4xl cursor-pointer text-background"
+             
               />
             </div>
 

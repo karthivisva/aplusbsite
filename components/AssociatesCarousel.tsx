@@ -11,7 +11,7 @@ interface Associate {
 const associates: Associate[] = [
   { name: "Raaj Associates", image: "/assosiates2.jpg" },
   { name: "WellWalled Habitat", image: "/assosiats1.jpg" },
-  { name: "Associate 3", image: "/associate3.png" },
+  { name: "MANNOVIYAM", image: "/assosiates3.jpg" },
   { name: "Associate 4", image: "/associate4.png" },
 ];
 

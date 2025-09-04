@@ -1,13 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import { useState } from "react";
 import { navVariants } from "@/motion";
-import { TextHover } from "@/animation";
 import { navbarItems } from "@/constants";
 import { useMotionValueEvent, useScroll, motion } from "framer-motion";
 import MobileNav from "./MobileNav";
 
 export default function Navbar() {
   const [hidden, setHidden] = useState(false);
+  const [active, setActive] = useState<number | null>(null); // 🚀 no default selection
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -29,28 +31,53 @@ export default function Navbar() {
         {/* Logo Section */}
         <div className="w-[50%]">
           <Link href={"/"} className="flex items-baseline gap-1">
-           <span className="bg-[#4d8045] px-2 py-1 rounded">
-  <span className="text-white text-[28px] font-bold tracking-wide">
-    a plus b
-  </span>
-</span>
-            <span className="text-[14px] font-medium text-black">
-              Consortium
+            <span className="bg-[#4d8045] px-2 py-1 rounded inline-block">
+              <span
+                className="text-white text-[28px] font-bold tracking-wide"
+                style={{
+                  fontFamily: "'Luckiest Guy', cursive",
+                  transform: "rotate(-5deg) skewX(-10deg)",
+                }}
+              >
+                a plus b
+              </span>
+            </span>
+            <span className="text-[30px] font-extrabold text-black">
+              CONSORTIUM
             </span>
           </Link>
         </div>
 
-        {/* Navbar Links */}
-        <div className="flex gap-x-[20px] w-[50%]">
+        {/* Navbar Links with pill highlight */}
+        <div className="flex gap-x-[60px] w-[50%] justify-end">
           {navbarItems.map((item) => (
             <Link
               key={item.id}
-              className={`w-fit paragraph font-medium font-NeueMontreal text-secondry capitalize flex flex-col hover ${
-                item.id === 5 && "ml-auto"
-              }`}
               href={item.href}
+              onClick={() => setActive(item.id)}
+              className="relative whitespace-nowrap inline-block"
             >
-              <TextHover titile1={item.title} titile2={item.title} />
+              {active === item.id && (
+                <motion.span
+                  layoutId="highlight"
+                  className="absolute inset-0 bg-[#4d8045] rounded-2xl opacity-100"
+                  style={{ zIndex: -1 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 30,
+                  }}
+                />
+              )}
+              <span
+                className={`relative z-10 px-4 py-2 text-base font-medium transition-colors duration-300 ${
+                  active === item.id
+                    ? "text-white"
+                    : "text-secondry hover:text-black"
+                }`}
+              >
+                {item.title}
+              </span>
             </Link>
           ))}
         </div>

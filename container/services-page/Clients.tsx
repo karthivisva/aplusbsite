@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -7,48 +6,64 @@ export default function CoreTeam() {
 	const team = [
 		{
 			id: 1,
-			name: "VIGNESWARAN KV",
-			role: "Principal Architect — Visionary & Strategic Leader",
-			details: `As the Principal Architect, Vigneswaran KV defines APLUSB’s design philosophy. 
-He ensures every project reflects sustainability, aesthetics, and innovation while mentoring architects and leading high-level discussions.`,
+			name: "VIGNESHWARAN KV",
+			role: "Principal Architect",
+			details: "Visionary & strategic leader overseeing design philosophy and mentoring architects.",
 		},
 		{
 			id: 2,
 			name: "SYED ABUTHAHIR U",
-			role: "Chief Architect — Design Innovator & Technical Authority",
-			details: `Responsible for translating concepts into technical drawings, 
-leading BIM adoption, feasibility studies, and AR/VR prototypes for client presentations.`,
+			role: "Chief Architect",
+			details: "Leads design innovation, technical drawings, feasibility studies, and ensures project quality.",
 		},
 		{
 			id: 3,
-			name: "ADHIP DHARUNESH",
-			role: "Civil Engineer — Structural Backbone",
-			details: `Ensures structural durability, soil/material analysis, 
-eco-friendly practices like rainwater harvesting, and compliance with IS/global standards.`,
+			name: "VIJAY KUMAR J",
+			role: "Project Management Consultant",
+			details: "Manages project timelines, budgets, and ensures successful delivery of all project milestones.",
 		},
-		
+		{
+			id: 4,
+			name: "RAJU DV",
+			role: "Chief Engineer",
+			details: "Oversees engineering solutions, structural integrity, and technical compliance on projects.",
+		},
 		{
 			id: 5,
-			name: "VARATHARAJAPERMAL N",
-			role: "Senior Architect — Detail-Oriented Designer & Mentor",
-			details: `Prepares detailed drawings, mentors juniors, integrates sustainable solutions, 
-and aligns design with client expectations.`,
+			name: "ADHIP DHARUNESH",
+			role: "Civil Engineer",
+			details: "Ensures structural durability, material analysis, and compliance with civil engineering standards.",
 		},
 		{
 			id: 6,
-			name: "RAJ KAILASHAN U",
-			role: "Senior Architect — Design Realist & Execution Specialist",
-			details: `Balances creativity with feasibility, develops construction-ready plans, 
-and supervises site implementations.`,
+			name: "VARATHARAJAPERUMAL N",
+			role: "Senior Architect",
+			details: "Prepares detailed architectural drawings, mentors juniors, and integrates sustainable design solutions.",
 		},
 		{
 			id: 7,
-			name: "VIZHAG MOHANRAJ R",
-			role: "Senior Architect — Innovator in Visualization & Technical Detailing",
-			details: `Creates 3D models, renders, AR/VR walk-throughs, compliance reports, 
-and ensures construction accuracy.`,
+			name: "RAJ KAILASHAN U",
+			role: "Senior Architect",
+			details: "Balances creative design with execution feasibility and supervises site implementations.",
 		},
-		
+		{
+			id: 8,
+			name: "VIZHAG MOHANRAJ R",
+			role: "Senior Architect",
+			details: "Specializes in 3D modeling, visualizations, and technical detailing for accurate construction.",
+		},
+		{
+			id: 9,
+			name: "SNEHA RS",
+			role: "Accounts",
+			details: "Manages financial records, budgeting, and ensures smooth accounting operations.",
+		},
+		{
+			id: 10,
+			name: "SOUMYA R",
+			role: "Senior Engineer",
+			details: "Oversees engineering execution, technical coordination, and ensures project compliance.",
+		},
 	];
 
 	const [activeAccordion, setActiveAccordion] = useState<number | null>(team[0].id);
