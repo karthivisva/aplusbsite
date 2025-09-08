@@ -1,21 +1,22 @@
 "use client";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { LinkHover, TextMask } from "@/animation";
 import { useEffect, useState, useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { Eyes } from "@/components";
+import { LinkHover } from "@/animation";
 
 export default function Socials() {
   const [rotate, setRotate] = useState(0);
 
-  // Make phrases clickable
+  // Clickable social phrases
   const phrase = [
     { name: "INSTAGRAM", href: "https://www.instagram.com" },
-    { name: "FACEBOOK", href: "https://www.facebook.com" },
     { name: "YouTUBE", href: "https://www.youtube.com" },
+    { name: "FACEBOOK", href: "https://www.facebook.com" },
   ];
 
+  // Mouse-follow rotation
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const mouseX = e.clientX;
@@ -32,12 +33,12 @@ export default function Socials() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const container = useRef(null);
+  // Scroll-based motion
+  const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end start"],
   });
-
   const mq = useTransform(scrollYProgress, [0, 1], [0, -700]);
 
   return (
@@ -45,34 +46,40 @@ export default function Socials() {
       className="w-full min-h-screen sm:h-screen xm:h-screen bg-about padding-y relative"
       ref={container}
     >
-      <div className="w-full h-full flex justify-center gap-[50px] items-center flex-col">
-        {/* Clickable Phrase */}
-        <div className="flex flex-col gap-[10px] pb-[50px]">
-          <h1 className="text-[277px] leading-[207px] lg:text-[230px] lg:leading-[170px] md:text-[150px] md:leading-[100px] sm:text-[74px] sm:leading-[68px] xm:text-[64px] xm:leading-[48px] text-center font-bold font-FoundersGrotesk text-secondry uppercase pointer-events-auto">
-            <TextMask>
-              {phrase.map((item, idx) => (
-                <Link
-                  key={idx}
-                  href={item.href}
-                  target="_blank"
-                  className="mx-4 hover:text-secondry/70 transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </TextMask>
-          </h1>
-        </div>
+      <div className="w-full h-full flex justify-center items-center flex-col gap-[50px]">
+        {/* Clickable Social Phrases - Vertical Stack */}
+     {/* Clickable Social Phrases - Vertical Stack */}
+<div className="flex flex-col items-center text-center text-[180px] lg:text-[140px] md:text-[100px] sm:text-[70px] xm:text-[60px] font-bold font-FoundersGrotesk text-secondry uppercase pointer-events-auto">
+  {phrase.map((item, idx) => (
+    <motion.div
+      key={idx}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: idx * 0.3, duration: 0.6 }}
+    >
+      <Link
+        href={item.href}
+        target="_blank"
+        className="hover:text-secondry/70 transition-colors"
+      >
+        {item.name}
+      </Link>
+    </motion.div>
+  ))}
+</div>
+
 
         {/* Contact Section */}
         <div className="w-full border-t border-[#21212155] pt-[20px]">
           <div className="w-full flex sm:flex-col xm:flex-col justify-between gap-y-[20px] padding-x">
+            {/* Contact Header */}
             <div className="w-[50%] sm:w-full xm:w-full">
               <h3 className="paragraph font-medium text-secondry font-NeueMontreal">
                 Our Contact
               </h3>
             </div>
 
+            {/* Address + Email */}
             <div className="w-[50%] sm:w-full xm:w-full flex sm:flex-col xm:flex-col justify-between gap-y-[20px]">
               {/* Address */}
               <div>
@@ -93,7 +100,7 @@ export default function Socials() {
                 </div>
               </div>
 
-              {/* Email & Socials */}
+              {/* Email */}
               <div className="flex w-fit h-fit gap-x-[5px] group">
                 <div className="rounded-[50px] border-[2px] border-[#21212155] group-hover:bg-secondry py-[3px] px-[12px] cursor-pointer">
                   <Link
@@ -105,7 +112,11 @@ export default function Socials() {
                 </div>
 
                 <div className="w-[33px] flex items-center justify-center h-[33px] border-[2px] border-[#21212155] rounded-[50px] group-hover:bg-secondry transition-all duration-200 ease-in cursor-pointer sm:hidden xm:hidden">
-                  <ArrowUpRight size={24} strokeWidth={1.25} className="text-secondry group-hover:text-background" />
+                  <ArrowUpRight
+                    size={24}
+                    strokeWidth={1.25}
+                    className="text-secondry group-hover:text-background"
+                  />
                 </div>
               </div>
             </div>
