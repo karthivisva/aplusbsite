@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { RoundButton } from "@/components";
-import { ReactNode } from "react";
+import { ReactNode, CSSProperties } from "react";
 
 // ===== Reusable Components =====
 
@@ -26,7 +26,13 @@ function FormInput({ placeholder }: { placeholder: string }) {
 }
 
 // Button component
-function FormButton({ href = "/", title = "Send Inquiry" }: { href?: string; title?: string }) {
+function FormButton({
+  href = "/",
+  title = "Send Inquiry",
+}: {
+  href?: string;
+  title?: string;
+}) {
   return (
     <div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group">
       <RoundButton
@@ -34,6 +40,7 @@ function FormButton({ href = "/", title = "Send Inquiry" }: { href?: string; tit
         href={href}
         title={title}
         className="bg-white text-black px-6 py-2 text-sm sm:text-base rounded-full"
+        style={{} as CSSProperties} // <-- fix for TypeScript
       />
     </div>
   );
