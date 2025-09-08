@@ -154,7 +154,7 @@ export const projectItem = [
       links: [
          {
             id: 1,
-            title: "Interrior",
+            title: "Interior",
             href: "/services",
          },
          {
@@ -173,7 +173,7 @@ export const projectItem = [
       links: [
            {
             id: 1,
-            title: "Interrior",
+            title: "Interior",
             href: "/services",
          },
          {
