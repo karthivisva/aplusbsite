@@ -42,8 +42,9 @@ export default function Home() {
         </div>
         <About />
         <AssociatesCarousel />
+           <Projects />
         <Testimonial />
-        <Projects />
+     
         <Clients />
       </Curve>
 
