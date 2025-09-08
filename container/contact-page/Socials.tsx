@@ -8,7 +8,13 @@ import { Eyes } from "@/components";
 
 export default function Socials() {
   const [rotate, setRotate] = useState(0);
-  const phrase = ["INSTAGRAM", "FACEBOOK", "YouTUBE"];
+
+  // Make phrases clickable
+  const phrase = [
+    { name: "INSTAGRAM", href: "https://www.instagram.com" },
+    { name: "FACEBOOK", href: "https://www.facebook.com" },
+    { name: "YouTUBE", href: "https://www.youtube.com" },
+  ];
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -40,9 +46,21 @@ export default function Socials() {
       ref={container}
     >
       <div className="w-full h-full flex justify-center gap-[50px] items-center flex-col">
+        {/* Clickable Phrase */}
         <div className="flex flex-col gap-[10px] pb-[50px]">
-          <h1 className="text-[277px] leading-[207px] lg:text-[230px] lg:leading-[170px] md:text-[150px] md:leading-[100px] sm:text-[74px] sm:leading-[68px] xm:text-[64px] xm:leading-[48px] text-center font-bold font-FoundersGrotesk text-secondry uppercase pointer-events-none">
-            <TextMask>{phrase}</TextMask>
+          <h1 className="text-[277px] leading-[207px] lg:text-[230px] lg:leading-[170px] md:text-[150px] md:leading-[100px] sm:text-[74px] sm:leading-[68px] xm:text-[64px] xm:leading-[48px] text-center font-bold font-FoundersGrotesk text-secondry uppercase pointer-events-auto">
+            <TextMask>
+              {phrase.map((item, idx) => (
+                <Link
+                  key={idx}
+                  href={item.href}
+                  target="_blank"
+                  className="mx-4 hover:text-secondry/70 transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </TextMask>
           </h1>
         </div>
 

@@ -25,20 +25,14 @@ export default function MobileNav() {
       >
         <Link href={"/"}>
           <div className="flex items-baseline gap-1">
-            {/* Smaller funky "a plus b" */}
+            {/* Clean "a plus b" */}
             <span className="bg-[#4d8045] px-2 py-1 rounded inline-block">
-              <span
-                className="text-white text-[22px] font-bold tracking-wide"
-                style={{
-                  fontFamily: "'Luckiest Guy', cursive",
-                  transform: "rotate(-5deg) skewX(-10deg)",
-                }}
-              >
+              <span className="text-white text-[22px] font-bold tracking-wide">
                 a plus b
               </span>
             </span>
 
-            {/* Smaller bold Consortium */}
+            {/* Consortium */}
             <span className="text-[24px] font-extrabold text-black">
               CONSORTIUM
             </span>
@@ -64,29 +58,20 @@ export default function MobileNav() {
             <div className="w-full flex justify-between items-center h-[8vh] border-b border-[#f1f1f155] padding-x bg-[#f1f1f1]">
               <Link href={"/"}>
                 <div className="flex items-baseline gap-1">
-                  {/* Smaller funky "a plus b" in menu */}
+                  {/* Clean "a plus b" in menu */}
                   <span className="inline-block">
-                    <span
-                      className="bg-[#4d8045] px-2 py-1 rounded inline-block text-white text-[22px] font-bold tracking-wide"
-                      style={{
-                        fontFamily: "'Luckiest Guy', cursive",
-                   
-                      }}
-                    >
+                    <span className="bg-[#4d8045] px-2 py-1 rounded inline-block text-white text-[22px] font-bold tracking-wide">
                       a plus b
                     </span>
                   </span>
 
-                  {/* Smaller bold Consortium in menu */}
+                  {/* Consortium in menu */}
                   <span className="text-[22px] font-extrabold text-black">
                     CONSORTIUM
                   </span>
                 </div>
               </Link>
-              <IoMdClose
-                onClick={() => setToggle(false)}
-             
-              />
+              <IoMdClose onClick={() => setToggle(false)} />
             </div>
 
             {/* Nav Links */}
@@ -96,7 +81,7 @@ export default function MobileNav() {
                   href={item.href}
                   key={item.id}
                   onClick={() => setToggle(false)}
-                  className="text-[28px] leading-[36px] font-FoundersGrotesk font-bold tracking-[-.9] text-background"
+                  className="text-[28px] leading-[36px] font-bold tracking-tight text-background"
                 >
                   {item.title}
                 </Link>

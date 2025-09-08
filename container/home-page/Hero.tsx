@@ -72,6 +72,11 @@ export default function Hero() {
 							
 							<div className="w-[50%] xm:w-full sm:w-full">
 								<p className="paragraph font-NeueMontreal text-secondry">
+									Architecture | Interior | Construction
+								</p>
+							</div>
+								<div className="w-[70%] xm:w-full sm:w-full">
+								<p className="paragraph font-NeueMontreal text-secondry">
 									For public and private companies
 								</p>
 							</div>

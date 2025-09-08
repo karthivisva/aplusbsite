@@ -25,8 +25,8 @@ export default function Clients() {
       review:
         "Commercial Building (S+4) with a total built-up area of 12,500 sq.ft, designed for functionality and modern usage.",
       links: [
-        { id: 1, title: "Commercial", href: "/projects" },
-        { id: 2, title: "12,500 Sq.ft", href: "/projects" },
+        { id: 1, title: "Commercial", href: "" },
+        { id: 2, title: "12,500 Sq.ft", href: "" },
       ],
     },
     {
@@ -39,8 +39,8 @@ export default function Clients() {
       review:
         "Interior works covering 50,000 sq.ft for one of the leading hospitals in Trichy, integrating modern healthcare design standards.",
       links: [
-        { id: 1, title: "Interior Works", href: "/projects" },
-        { id: 2, title: "50,000 Sq.ft", href: "/projects" },
+        { id: 1, title: "Interior Works", href: "" },
+        { id: 2, title: "50,000 Sq.ft", href: "" },
       ],
     },
     {
@@ -53,8 +53,8 @@ export default function Clients() {
       review:
         "Interior works spanning 8,000 sq.ft for the Indian Air Force, delivering a professional and functional design.",
       links: [
-        { id: 1, title: "Interior Works", href: "/projects" },
-        { id: 2, title: "8,000 Sq.ft", href: "/projects" },
+        { id: 1, title: "Interior Works", href: "" },
+        { id: 2, title: "8,000 Sq.ft", href: "" },
       ],
     },
     {
@@ -67,8 +67,8 @@ export default function Clients() {
       review:
         "Showroom interiors with a floor space of 1,800 sq.ft, blending branding and modern display-focused design.",
       links: [
-        { id: 1, title: "Interior Works", href: "/projects" },
-        { id: 2, title: "1,800 Sq.ft", href: "/projects" },
+        { id: 1, title: "Interior Works", href: "" },
+        { id: 2, title: "1,800 Sq.ft", href: "" },
       ],
     },
     {
@@ -81,8 +81,8 @@ export default function Clients() {
       review:
         "Interior works covering 8,000 sq.ft for corporate spaces, combining functionality with sleek modern interiors.",
       links: [
-        { id: 1, title: "Interior Works", href: "/projects" },
-        { id: 2, title: "8,000 Sq.ft", href: "/projects" },
+        { id: 1, title: "Interior Works", href: "" },
+        { id: 2, title: "8,000 Sq.ft", href: "" },
       ],
     },
     {
@@ -95,8 +95,8 @@ export default function Clients() {
       review:
         "Interior design project with a 2,500 sq.ft scope, focused on creating efficient, adaptable spaces for the foundation.",
       links: [
-        { id: 1, title: "Interior Works", href: "/projects" },
-        { id: 2, title: "2,500 Sq.ft", href: "/projects" },
+        { id: 1, title: "Interior Works", href: "" },
+        { id: 2, title: "2,500 Sq.ft", href: "" },
       ],
     },
   ];
@@ -177,6 +177,7 @@ export default function Clients() {
                         ease: [0.4, 0, 0.2, 1],
                         duration: 1,
                       }}
+                      className="pointer-events-auto" // ✅ Fix for clickable links
                     >
                       <Button href={link.href} title={link.title} />
                     </motion.div>

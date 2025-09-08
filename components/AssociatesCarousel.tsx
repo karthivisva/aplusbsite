@@ -6,13 +6,25 @@ import { motion, useMotionValue, animate } from "framer-motion";
 interface Associate {
   name: string;
   image: string;
+  link: string; // 🔗 new field
 }
 
 const associates: Associate[] = [
-  { name: "Raaj Associates", image: "/assosiates2.jpg" },
-  { name: "WellWalled Habitat", image: "/assosiats1.jpg" },
-  { name: "MANNOVIYAM", image: "/assosiates3.jpg" },
-  { name: "Associate 4", image: "/associate4.png" },
+  {
+    name: "Raaj Associates",
+    image: "/assosiates2.jpg",
+    link: "https://raajassociates.com", // example link
+  },
+  {
+    name: "MANNOVIYAM",
+    image: "/assosiates3.jpg",
+    link: "https://mannoviyam.org", // example link
+  },
+  {
+    name: "Associate 4",
+    image: "/associate4.png",
+    link: "https://example.com", // example link
+  },
 ];
 
 export default function AssociatesCarousel() {
@@ -93,9 +105,12 @@ export default function AssociatesCarousel() {
           onMouseLeave={handleMouseLeave}
         >
           {itemsToRender.map((associate, idx) => (
-            <div
+            <a
               key={idx}
-              className="min-w-[140px] flex flex-col justify-center items-center text-center"
+              href={associate.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="min-w-[140px] flex flex-col justify-center items-center text-center hover:scale-105 transition-transform"
             >
               <img
                 src={associate.image}
@@ -105,7 +120,7 @@ export default function AssociatesCarousel() {
               <p className="mt-2 text-sm font-medium text-gray-700">
                 {associate.name}
               </p>
-            </div>
+            </a>
           ))}
         </motion.div>
       </div>

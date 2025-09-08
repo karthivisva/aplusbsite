@@ -118,12 +118,12 @@ export const projectItem = [
          {
             id: 1,
             title: "Construction",
-            href: "/services",
+            href: "",
          },
          {
             id: 2,
             title: "Architecture",
-            href: "/services",
+            href: "",
          },
        
       ]
@@ -137,12 +137,12 @@ export const projectItem = [
          {
             id: 1,
             title: "Construction",
-            href: "/services",
+            href: "",
          },
          {
             id: 2,
             title: "Architecture",
-            href: "/services",
+            href: "",
          },
       ]
    },
@@ -155,12 +155,12 @@ export const projectItem = [
          {
             id: 1,
             title: "Interior",
-            href: "/services",
+            href: "",
          },
          {
             id: 2,
             title: "design research",
-            href: "/services",
+            href: "",
          },
       
       ]
@@ -174,12 +174,12 @@ export const projectItem = [
            {
             id: 1,
             title: "Interior",
-            href: "/services",
+            href: "",
          },
          {
             id: 2,
             title: "design research",
-            href: "/services",
+            href: "",
          },
       ]
    },
@@ -656,12 +656,12 @@ export const presentationProjectItem = [
          {
             id: 1,
             title: "Artchitecture",
-            href: "/services",
+            href: "",
          },
          {
             id: 2,
             title: "Construction",
-            href: "services",
+            href: "",
          },
        
       ]
@@ -675,12 +675,12 @@ export const presentationProjectItem = [
          {
             id: 1,
             title: "Interior",
-            href: "/services",
+            href: "",
          },
          {
             id: 2,
             title: "design research",
-            href: "services",
+            href: "",
          },
       
       ]
@@ -694,7 +694,7 @@ export const presentationProjectItem = [
          {
             id: 1,
             title: "Interior",
-            href: "/services",
+            href: "",
          },
       ]
    },
@@ -707,17 +707,17 @@ export const presentationProjectItem = [
          {
             id: 1,
             title: "Elivation",
-            href: "/services",
+            href: "",
          },
          {
             id: 2,
             title: "Construction",
-            href: "/services",
+            href: "",
          },
          {
             id: 3,
             title: "Artichitecture",
-            href: "/services",
+            href: "",
          },
       ]
    },
@@ -730,17 +730,17 @@ export const presentationProjectItem = [
          {
             id: 1,
             title: "Artictecture",
-            href: "/services",
+            href: "",
          },
          {
             id: 2,
             title: "Construction",
-            href: "/services",
+            href: "",
          },
          {
             id: 3,
             title: "Elivation",
-            href: "/services",
+            href: "",
          },
       ]
    },
@@ -753,12 +753,12 @@ export const presentationProjectItem = [
          {
             id: 1,
             title: "Artchitecture",
-            href: "/services",
+            href: "",
          },
          {
             id: 2,
             title: "Construction",
-            href: "services",
+            href: "",
          },
       ]
    },
@@ -771,12 +771,12 @@ export const presentationProjectItem = [
          {
             id: 1,
             title: "Elivation",
-            href: "/services",
+            href: "",
          },
          {
             id: 2,
             title: "Architecture",
-            href: "/services",
+            href: "",
          },
       ]
    },
@@ -789,7 +789,7 @@ export const presentationProjectItem = [
          {
             id: 1,
             title: "Interior",
-            href: "/services",
+            href: "",
          },
       ]
    },
@@ -802,17 +802,17 @@ export const presentationProjectItem = [
          {
             id: 1,
             title: "Elivation",
-            href: "/services",
+            href: "",
          },
          {
             id: 2,
             title: "Artichitecture",
-            href: "/services",
+            href: "",
          },
          {
             id: 3,
             title: "Construction",
-            href: "/services",
+            href: "",
          },
       ]
    },
