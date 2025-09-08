@@ -24,7 +24,7 @@ export const navbarItems = [
    },
    {
       id: 5,
-      title: "Promotions",   // ✅ new
+      title: "Promoting",   // ✅ new
       href: "/promotions",
    },
 {
