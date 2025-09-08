@@ -89,7 +89,7 @@ export const footernavbarItems = [
    },
    {
       id: 6,
-      title: "Promotions",   // ✅ Added
+      title: "Promoting",   // ✅ Added
       href: "/promotions",
    },
    {
