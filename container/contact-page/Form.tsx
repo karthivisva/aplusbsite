@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
 import { RoundButton } from "@/components";
+import { ReactNode } from "react";
 
 // ===== Reusable Components =====
 
 // Label/heading component
-function FormLabel({ children }) {
+function FormLabel({ children }: { children: ReactNode }) {
   return (
     <h2 className="sub-heading font-NeueMontreal font-normal text-secondry text-sm sm:text-base">
       {children}
@@ -14,7 +15,7 @@ function FormLabel({ children }) {
 }
 
 // Input component
-function FormInput({ placeholder }) {
+function FormInput({ placeholder }: { placeholder: string }) {
   return (
     <input
       type="text"
@@ -25,7 +26,7 @@ function FormInput({ placeholder }) {
 }
 
 // Button component
-function FormButton({ href = "/", title = "Send Inquiry" }) {
+function FormButton({ href = "/", title = "Send Inquiry" }: { href?: string; title?: string }) {
   return (
     <div className="w-fit flex items-center justify-between bg-secondry cursor-pointer rounded-full group">
       <RoundButton
@@ -45,16 +46,14 @@ export default function Form() {
       <div className="flex flex-col gap-6">
 
         {/* Name and Company */}
-      
-          <div className="flex flex-col ">
-            <FormLabel>Your Name</FormLabel>
-            <FormInput placeholder="Enter your name" />
-          </div>
-          <div className="flex flex-col ">
-            <FormLabel>Company Name</FormLabel>
-            <FormInput placeholder="Company name type here" />
-          </div>
-     
+        <div className="flex flex-col">
+          <FormLabel>Your Name</FormLabel>
+          <FormInput placeholder="Enter your name" />
+        </div>
+        <div className="flex flex-col">
+          <FormLabel>Company Name</FormLabel>
+          <FormInput placeholder="Company name type here" />
+        </div>
 
         {/* Goal */}
         <div className="flex flex-col">
@@ -78,7 +77,6 @@ export default function Form() {
         <div className="flex flex-col">
           <FormLabel>Email</FormLabel>
           <FormInput placeholder="name@example.com" />
-        
         </div>
 
         {/* Optional Details */}
