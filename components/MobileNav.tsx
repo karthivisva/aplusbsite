@@ -18,23 +18,24 @@ export default function MobileNav() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.3, 0.86, 0.36, 0.95] }}
-        className="w-full hidden justify-between items-center h-[15vh] padding-x sm:flex xm:flex md:flex bg-[#f1f1f1]"
+        className="w-full hidden justify-between items-center h-[64px] padding-x sm:flex xm:flex md:flex bg-[#f1f1f1]"
       >
-        {/* ✅ Logo replaced with image */}
+        {/* ✅ Logo */}
         <Link href={"/"} className="flex items-center">
           <Image
             src="/logo.png"
             alt="Company Logo"
-            width={180}   // ⬆️ adjust size
-            height={180}
+            width={140} // compact logo size
+            height={50}
             priority
             className="h-auto w-auto object-contain"
           />
         </Link>
 
+        {/* Hamburger Icon */}
         <HiOutlineMenuAlt4
           onClick={() => setToggle(true)}
-          className="text-3xl cursor-pointer text-black"
+          className="text-2xl cursor-pointer text-black"
         />
       </motion.div>
 
@@ -49,20 +50,20 @@ export default function MobileNav() {
             className="fixed top-0 bottom-0 right-0 z-50 w-full min-h-screen flex flex-col bg-secondry"
           >
             {/* Top Row inside menu */}
-            <div className="w-full flex justify-between items-center h-[8vh] border-b border-[#f1f1f155] padding-x bg-[#f1f1f1]">
+            <div className="w-full flex justify-between items-center h-[64px] border-b border-[#f1f1f155] padding-x bg-[#f1f1f1]">
               <Link href={"/"} className="flex items-center">
                 <Image
                   src="/logo.png"
                   alt="Company Logo"
-                  width={150}  // smaller version inside menu
-                  height={70}
+                  width={120} // smaller version inside menu
+                  height={50}
                   priority
                   className="h-auto w-auto object-contain"
                 />
               </Link>
               <IoMdClose
                 onClick={() => setToggle(false)}
-                className="text-3xl cursor-pointer text-black"
+                className="text-2xl cursor-pointer text-black"
               />
             </div>
 
@@ -73,7 +74,7 @@ export default function MobileNav() {
                   href={item.href}
                   key={item.id}
                   onClick={() => setToggle(false)}
-                  className="text-[28px] leading-[36px] font-bold tracking-tight text-background"
+                  className="text-[24px] leading-[32px] font-bold tracking-tight text-background"
                 >
                   {item.title}
                 </Link>
