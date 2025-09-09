@@ -49,7 +49,7 @@ export default function Works() {
 							className="py-[6px]"
 							backgroundColor="#212121">
 							<p className="text-secondry z-10 px-[10px] ml-[15px] py-[6px] group-hover:text-white">
-								view all case studies
+								view all Works
 							</p>
 							<div className="bg-secondry p-[10px] rounded-full scale-[0.3] mr-[10px] group-hover:scale-[0.9] transition-all z-10 text-secondry group-hover:bg-white  duration-300 ease-in-out">
 								<ArrowUpRight

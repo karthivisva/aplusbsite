@@ -130,7 +130,7 @@ export const projectItem = [
    },
    {
       id: 2,
-      title: "Arunkumar Residence,Coimbatore",
+      title: "Arunkumar Residence",
       href: "/case/",
       src: project2,
       links: [
