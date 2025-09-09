@@ -13,7 +13,7 @@ export default function Projects() {
 				<div
 					data-scroll
 					data-scroll-speed="-.2"
-					className="bg-[#BFDA62] w-[75%] py-[20px] rounded-t-[10px]	"
+					className="bg-[#BFDA62] w-[75%] py-[20px] rounded-t-[10px]"
 				/>
 				<div
 					className="bg-[#B8D25E] relative z-20 w-[90%] py-[20px] rounded-t-[10px]"
@@ -40,11 +40,17 @@ export default function Projects() {
 									{item.title}
 								</h1>
 							</div>
-							<ProjectCard
-								item={item}
-								key={item.id}
-							/>
-							<div className="flex flex-wrap items-center gap-[10px] mt-[20px]">
+
+							{/* Make ProjectCard not clickable */}
+							<div className="pointer-events-none">
+								<ProjectCard
+									item={item}
+									key={item.id}
+								/>
+							</div>
+
+							{/* Make Tags not clickable */}
+							<div className="flex flex-wrap items-center gap-[10px] mt-[20px] pointer-events-none">
 								{item.links.map((link) => (
 									<Tags
 										bgcolor="#212121"
