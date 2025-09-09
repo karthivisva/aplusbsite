@@ -26,24 +26,24 @@ export default function Navbar() {
     <>
       <motion.nav
         variants={navVariants}
-        className="w-full h-[12vh] padding-x fixed top-0 left-0 z-50 backdrop-blur-[7px] flex items-center justify-between sm:hidden xm:hidden md:hidden"
+        className="w-full h-[12vh] padding-x fixed top-0 left-0 z-50 bg-white flex items-center justify-between sm:hidden xm:hidden md:hidden shadow-md"
         animate={hidden ? "hidden" : "vissible"}
       >
-        {/* ✅ Logo Section replaced with logo.png */}
+        {/* ✅ Logo Section */}
         <div className="flex-shrink-0 max-w-[40%] lg:max-w-[35%] xl:max-w-[30%]">
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png" // should be inside /public folder
+              src="/logo.png"
               alt="Company Logo"
-              width={220}   // ⬆️ Bigger width
-              height={80}   // ⬆️ Bigger height
+              width={220}
+              height={80}
               priority
               className="h-auto w-auto object-contain"
             />
           </Link>
         </div>
 
-        {/* Navbar Links with pill highlight */}
+        {/* ✅ Navbar Links with pill highlight */}
         <div className="flex items-center gap-x-2 lg:gap-x-4 xl:gap-x-8 2xl:gap-x-12 flex-shrink-0">
           {navbarItems.map((item) => (
             <Link
@@ -77,6 +77,8 @@ export default function Navbar() {
           ))}
         </div>
       </motion.nav>
+
+      {/* ✅ Mobile Navbar */}
       <MobileNav />
     </>
   );
