@@ -5,10 +5,10 @@ import { presentationProjectItem } from "@/constants";
 
 export default function Projects() {
 	const container = useRef(null);
+
 	return (
-		<div
-			className="w-full"
-			ref={container}>
+		<div className="w-full" ref={container}>
+			{/* Background layers */}
 			<div className="w-full flex flex-col items-center justify-center bg-about">
 				<div
 					data-scroll
@@ -21,6 +21,8 @@ export default function Projects() {
 					data-scroll-speed="-.1"
 				/>
 			</div>
+
+			{/* Projects Section */}
 			<section className="w-full relative z-30 padding-y rounded-t-[20px] bg-background">
 				<div>
 					<h2 className="sub-heading font-normal padding-x font-NeueMontreal text-secondry">
@@ -29,11 +31,13 @@ export default function Projects() {
 						that people care about.
 					</h2>
 				</div>
+
 				<div className="w-full flex justify-between gap-y-[50px] padding-x padding-y flex-wrap">
 					{presentationProjectItem.map((item) => (
 						<div
 							className="w-[49%] sm:w-full xm:w-full"
 							key={item.id}>
+							{/* Title */}
 							<div className="flex gap-x-[10px] items-center pb-[10px]">
 								<span className="w-[10px] h-[10px] rounded-full bg-secondry" />
 								<h1 className="small-text uppercase font-medium font-NeueMontreal text-secondry">
@@ -41,16 +45,13 @@ export default function Projects() {
 								</h1>
 							</div>
 
-							{/* Make ProjectCard not clickable */}
-							<div className="pointer-events-none">
-								<ProjectCard
-									item={item}
-									key={item.id}
-								/>
+							{/* Project Card with hover scale */}
+							<div className="transition-transform duration-500 hover:scale-95 cursor-pointer">
+								<ProjectCard item={item} key={item.id} />
 							</div>
 
-							{/* Make Tags not clickable */}
-							<div className="flex flex-wrap items-center gap-[10px] mt-[20px] pointer-events-none">
+							{/* Tags (non-clickable but keep hover color) */}
+							<div className="flex flex-wrap items-center gap-[10px] mt-[20px]">
 								{item.links.map((link) => (
 									<Tags
 										bgcolor="#212121"
