@@ -1,15 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image"; // ✅ for logo
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { footernavbarItems } from "@/constants";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { AnimatePresence, motion } from "framer-motion";
-
-// Import Inter font (for Consortium text)
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"], weight: ["600", "700"] });
 
 export default function MobileNav() {
   const [toggle, setToggle] = useState(false);
@@ -23,21 +20,18 @@ export default function MobileNav() {
         transition={{ duration: 0.8, ease: [0.3, 0.86, 0.36, 0.95] }}
         className="w-full hidden justify-between items-center h-[15vh] padding-x sm:flex xm:flex md:flex bg-[#f1f1f1]"
       >
-        <Link href={"/"}>
-          <div className="flex items-baseline gap-1">
-            {/* Clean "a plus b" */}
-            <span className="bg-[#4d8045] px-2 py-1 rounded inline-block">
-              <span className="text-white text-[22px] font-bold tracking-wide">
-                a plus b
-              </span>
-            </span>
-
-            {/* Consortium */}
-            <span className="text-[24px] font-extrabold text-black">
-              CONSORTIUM
-            </span>
-          </div>
+        {/* ✅ Logo replaced with image */}
+        <Link href={"/"} className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Company Logo"
+            width={180}   // ⬆️ adjust size
+            height={180}
+            priority
+            className="h-auto w-auto object-contain"
+          />
         </Link>
+
         <HiOutlineMenuAlt4
           onClick={() => setToggle(true)}
           className="text-3xl cursor-pointer text-black"
@@ -56,22 +50,20 @@ export default function MobileNav() {
           >
             {/* Top Row inside menu */}
             <div className="w-full flex justify-between items-center h-[8vh] border-b border-[#f1f1f155] padding-x bg-[#f1f1f1]">
-              <Link href={"/"}>
-                <div className="flex items-baseline gap-1">
-                  {/* Clean "a plus b" in menu */}
-                  <span className="inline-block">
-                    <span className="bg-[#4d8045] px-2 py-1 rounded inline-block text-white text-[22px] font-bold tracking-wide">
-                      a plus b
-                    </span>
-                  </span>
-
-                  {/* Consortium in menu */}
-                  <span className="text-[22px] font-extrabold text-black">
-                    CONSORTIUM
-                  </span>
-                </div>
+              <Link href={"/"} className="flex items-center">
+                <Image
+                  src="/logo.png"
+                  alt="Company Logo"
+                  width={150}  // smaller version inside menu
+                  height={70}
+                  priority
+                  className="h-auto w-auto object-contain"
+                />
               </Link>
-              <IoMdClose onClick={() => setToggle(false)} />
+              <IoMdClose
+                onClick={() => setToggle(false)}
+                className="text-3xl cursor-pointer text-black"
+              />
             </div>
 
             {/* Nav Links */}

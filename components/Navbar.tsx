@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image"; // ✅ import Image for logo
 import { useState } from "react";
 import { navVariants } from "@/motion";
 import { navbarItems } from "@/constants";
@@ -9,7 +10,7 @@ import MobileNav from "./MobileNav";
 
 export default function Navbar() {
   const [hidden, setHidden] = useState(false);
-  const [active, setActive] = useState<number | null>(null); // 🚀 no default selection
+  const [active, setActive] = useState<number | null>(null);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -28,27 +29,21 @@ export default function Navbar() {
         className="w-full h-[12vh] padding-x fixed top-0 left-0 z-50 backdrop-blur-[7px] flex items-center justify-between sm:hidden xm:hidden md:hidden"
         animate={hidden ? "hidden" : "vissible"}
       >
-        {/* Logo Section - Made responsive */}
+        {/* ✅ Logo Section replaced with logo.png */}
         <div className="flex-shrink-0 max-w-[40%] lg:max-w-[35%] xl:max-w-[30%]">
-          <Link href={"/"} className="flex items-baseline gap-1">
-            <span className="bg-[#4d8045] px-2 py-1 rounded inline-block">
-              <span
-                className="text-white text-[20px] lg:text-[24px] xl:text-[28px] font-bold tracking-wide"
-                style={{
-                  fontFamily: "'Luckiest Guy', cursive",
-                  transform: "rotate(-5deg) skewX(-10deg)",
-                }}
-              >
-                a plus b
-              </span>
-            </span>
-            <span className="text-[22px] lg:text-[26px] xl:text-[30px] font-extrabold text-black">
-              CONSORTIUM
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png" // should be inside /public folder
+              alt="Company Logo"
+              width={220}   // ⬆️ Bigger width
+              height={80}   // ⬆️ Bigger height
+              priority
+              className="h-auto w-auto object-contain"
+            />
           </Link>
         </div>
 
-        {/* Navbar Links with pill highlight - Improved responsive spacing */}
+        {/* Navbar Links with pill highlight */}
         <div className="flex items-center gap-x-2 lg:gap-x-4 xl:gap-x-8 2xl:gap-x-12 flex-shrink-0">
           {navbarItems.map((item) => (
             <Link
