@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { logo } from "@/public";
 import { LinkHover, TextMask } from "@/animation";
 import { footerItems, footernavbarItems } from "@/constants";
 
@@ -108,7 +107,14 @@ export default function Footer() {
       <div className="w-full pt-[40px] pb-[30px] flex justify-between sm:flex-col xm:flex-col sm:gap-[20px] xm:gap-[20px]">
         <div className="w-1/2 sm:w-full xm:w-full">
           <Link href={"/"}>
-            <Image src={logo} alt="ochi logo" width={70} height={70} />
+            {/* ✅ Fixed logo import */}
+            <Image
+              src="/logo.png"  // must be inside /public folder
+              alt="Company Logo"
+              width={120}
+              height={90}
+              className="h-auto w-auto object-contain"
+            />
           </Link>
         </div>
         <div className="w-1/2 h-full flex gap-[10px] justify-between items-end sm:w-full xm:w-full sm:flex-col xm:flex-col sm:items-start xm:items-start">

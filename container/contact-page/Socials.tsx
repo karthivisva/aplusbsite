@@ -11,9 +11,9 @@ export default function Socials() {
 
   // Clickable social phrases
   const phrase = [
-    { name: "INSTAGRAM", href: "https://www.instagram.com" },
-    { name: "YouTUBE", href: "https://www.youtube.com" },
-    { name: "FACEBOOK", href: "https://www.facebook.com" },
+    { name: "INSTAGRAM", href: "https://www.instagram.com/aplusb_consortium?igsh=MXAyYjRoNDViYzNzMA==" },
+    { name: "YouTUBE", href: "https://youtube.com/@aplusbconsortium?si=1vIz3NP247w5mn2p" },
+    { name: "FACEBOOK", href: "https://www.facebook.com/share/17AEV6Sdb8/?mibextid=wwXIfr" },
   ];
 
   // Mouse-follow rotation
@@ -82,23 +82,27 @@ export default function Socials() {
             {/* Address + Email */}
             <div className="w-[50%] sm:w-full xm:w-full flex sm:flex-col xm:flex-col justify-between gap-y-[20px]">
               {/* Address */}
-              <div>
-                <h1 className="paragraph font-medium font-NeueMontreal text-secondry pb-[20px]">
-                  Location:
-                </h1>
-                <div className="flex flex-col gap-y-[10px]">
-                  <LinkHover
-                    className="before:h-[1px] after:h-[1px] w-fit paragraph font-medium capitalize flex flex-col before:bottom-[1px] after:bottom-[1px]"
-                    title="134, 3rd Floor, Kalidas Road"
-                    href="/"
-                  />
-                  <LinkHover
-                    className="before:h-[1px] after:h-[1px] w-fit paragraph font-medium capitalize flex flex-col before:bottom-[1px] after:bottom-[1px]"
-                    title="Ramnagar, Coimbatore - 641009"
-                    href="/"
-                  />
-                </div>
-              </div>
+         {/* Address */}
+<div>
+  <h1 className="paragraph font-medium font-NeueMontreal text-secondry pb-[20px]">
+    Location:
+  </h1>
+  <div className="flex flex-col gap-y-[10px]">
+    <LinkHover
+      className="before:h-[1px] after:h-[1px] w-fit paragraph font-medium capitalize flex flex-col before:bottom-[1px] after:bottom-[1px]"
+      title="134, 3rd Floor, Kalidas Road"
+      href="https://www.google.com/maps/place/134,+3rd+Floor,+Kalidas+Rd,+Ramnagar,+Coimbatore,+Tamil+Nadu+641009"
+    
+    />
+    <LinkHover
+      className="before:h-[1px] after:h-[1px] w-fit paragraph font-medium capitalize flex flex-col before:bottom-[1px] after:bottom-[1px]"
+      title="Ramnagar, Coimbatore - 641009"
+      href="https://www.google.com/maps/place/134,+3rd+Floor,+Kalidas+Rd,+Ramnagar,+Coimbatore,+Tamil+Nadu+641009"
+  
+    />
+  </div>
+</div>
+
 
               {/* Email */}
               <div className="flex w-fit h-fit gap-x-[5px] group">
